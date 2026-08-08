@@ -1,0 +1,1532 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>HBM Frame Editor — Photo &amp; Video Editor</title>
+<link rel="manifest" href="data:application/manifest+json,%7B%22name%22%3A%22HBM%20Frame%20Editor%22%2C%22short_name%22%3A%22HBM%20Frame%22%2C%22start_url%22%3A%22.%22%2C%22display%22%3A%22standalone%22%2C%22background_color%22%3A%22%230b0b0f%22%2C%22theme_color%22%3A%22%230b0b0f%22%2C%22icons%22%3A%5B%7B%22src%22%3A%22data%3Aimage%2Fsvg%2Bxml%3Bbase64%2CPHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI1MTIiIGhlaWdodD0iNTEyIj48ZGVmcz48bGluZWFyR3JhZGllbnQgaWQ9ImciIHgxPSIwIiB5MT0iMCIgeDI9IjEiIHkyPSIxIj48c3RvcCBvZmZzZXQ9IjAiIHN0b3AtY29sb3I9IiNmZjNkN2YiLz48c3RvcCBvZmZzZXQ9IjEiIHN0b3AtY29sb3I9IiMyMmU1ZmYiLz48L2xpbmVhckdyYWRpZW50PjwvZGVmcz48cmVjdCB3aWR0aD0iNTEyIiBoZWlnaHQ9IjUxMiIgcng9IjEwMCIgZmlsbD0iIzBiMGIwZiIvPjx0ZXh0IHg9IjUwJSIgeT0iNjYlIiBmb250LWZhbWlseT0iQXJpYWwsIHNhbnMtc2VyaWYiIGZvbnQtc2l6ZT0iMzAwIiBmb250LXdlaWdodD0iOTAwIiBmaWxsPSJ1cmwoI2cpIiB0ZXh0LWFuY2hvcj0ibWlkZGxlIj5IPC90ZXh0Pjwvc3ZnPg%3D%3D%22%2C%22sizes%22%3A%22512x512%22%2C%22type%22%3A%22image%2Fsvg%2Bxml%22%7D%2C%7B%22src%22%3A%22data%3Aimage%2Fsvg%2Bxml%3Bbase64%2CPHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI1MTIiIGhlaWdodD0iNTEyIj48ZGVmcz48bGluZWFyR3JhZGllbnQgaWQ9ImciIHgxPSIwIiB5MT0iMCIgeDI9IjEiIHkyPSIxIj48c3RvcCBvZmZzZXQ9IjAiIHN0b3AtY29sb3I9IiNmZjNkN2YiLz48c3RvcCBvZmZzZXQ9IjEiIHN0b3AtY29sb3I9IiMyMmU1ZmYiLz48L2xpbmVhckdyYWRpZW50PjwvZGVmcz48cmVjdCB3aWR0aD0iNTEyIiBoZWlnaHQ9IjUxMiIgcng9IjEwMCIgZmlsbD0iIzBiMGIwZiIvPjx0ZXh0IHg9IjUwJSIgeT0iNjYlIiBmb250LWZhbWlseT0iQXJpYWwsIHNhbnMtc2VyaWYiIGZvbnQtc2l6ZT0iMzAwIiBmb250LXdlaWdodD0iOTAwIiBmaWxsPSJ1cmwoI2cpIiB0ZXh0LWFuY2hvcj0ibWlkZGxlIj5IPC90ZXh0Pjwvc3ZnPg%3D%3D%22%2C%22sizes%22%3A%22192x192%22%2C%22type%22%3A%22image%2Fsvg%2Bxml%22%7D%5D%7D">
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI1MTIiIGhlaWdodD0iNTEyIj48ZGVmcz48bGluZWFyR3JhZGllbnQgaWQ9ImciIHgxPSIwIiB5MT0iMCIgeDI9IjEiIHkyPSIxIj48c3RvcCBvZmZzZXQ9IjAiIHN0b3AtY29sb3I9IiNmZjNkN2YiLz48c3RvcCBvZmZzZXQ9IjEiIHN0b3AtY29sb3I9IiMyMmU1ZmYiLz48L2xpbmVhckdyYWRpZW50PjwvZGVmcz48cmVjdCB3aWR0aD0iNTEyIiBoZWlnaHQ9IjUxMiIgcng9IjEwMCIgZmlsbD0iIzBiMGIwZiIvPjx0ZXh0IHg9IjUwJSIgeT0iNjYlIiBmb250LWZhbWlseT0iQXJpYWwsIHNhbnMtc2VyaWYiIGZvbnQtc2l6ZT0iMzAwIiBmb250LXdlaWdodD0iOTAwIiBmaWxsPSJ1cmwoI2cpIiB0ZXh0LWFuY2hvcj0ibWlkZGxlIj5IPC90ZXh0Pjwvc3ZnPg==">
+<link rel="apple-touch-icon" href="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI1MTIiIGhlaWdodD0iNTEyIj48ZGVmcz48bGluZWFyR3JhZGllbnQgaWQ9ImciIHgxPSIwIiB5MT0iMCIgeDI9IjEiIHkyPSIxIj48c3RvcCBvZmZzZXQ9IjAiIHN0b3AtY29sb3I9IiNmZjNkN2YiLz48c3RvcCBvZmZzZXQ9IjEiIHN0b3AtY29sb3I9IiMyMmU1ZmYiLz48L2xpbmVhckdyYWRpZW50PjwvZGVmcz48cmVjdCB3aWR0aD0iNTEyIiBoZWlnaHQ9IjUxMiIgcng9IjEwMCIgZmlsbD0iIzBiMGIwZiIvPjx0ZXh0IHg9IjUwJSIgeT0iNjYlIiBmb250LWZhbWlseT0iQXJpYWwsIHNhbnMtc2VyaWYiIGZvbnQtc2l6ZT0iMzAwIiBmb250LXdlaWdodD0iOTAwIiBmaWxsPSJ1cmwoI2cpIiB0ZXh0LWFuY2hvcj0ibWlkZGxlIj5IPC90ZXh0Pjwvc3ZnPg==">
+<meta name="theme-color" content="#0b0b0f">
+<meta name="application-name" content="HBM Frame Editor">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-title" content="HBM Frame">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Inter:wght@400;500;600;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#0b0b0f;
+    --panel:#151519;
+    --panel2:#1c1c22;
+    --line:#2a2a32;
+    --text:#edecf2;
+    --muted:#8d8d9c;
+    --accent1:#ff3d7f;
+    --accent2:#22e5ff;
+    --grad: linear-gradient(90deg,var(--accent1),var(--accent2));
+    --danger:#ff5c5c;
+  }
+  *{box-sizing:border-box;}
+  html,body{margin:0;padding:0;background:var(--bg);color:var(--text);font-family:'Inter',sans-serif;height:100%;overflow-x:hidden;}
+  ::selection{background:var(--accent1);color:#000;}
+  ::-webkit-scrollbar{width:8px;height:8px;}
+  ::-webkit-scrollbar-thumb{background:#333340;border-radius:4px;}
+
+  /* header */
+  header{
+    display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:10px;
+    padding:14px 16px;border-bottom:1px solid var(--line);
+    background:linear-gradient(180deg,#0e0e13,#0b0b0f);
+    position:sticky;top:0;z-index:50;
+  }
+  .brand{display:flex;align-items:center;gap:10px;}
+  .brand .mark{
+    width:30px;height:30px;border-radius:8px;background:var(--grad);
+    display:flex;align-items:center;justify-content:center;
+    font-family:'Archivo Black';font-size:15px;color:#0b0b0f;
+    transform:rotate(-6deg);
+  }
+  .brand h1{font-family:'Archivo Black';font-size:16px;letter-spacing:0.3px;margin:0;white-space:nowrap;}
+  @media (max-width:480px){ .brand h1{font-size:13px;} .brand span{font-size:9px;} }
+  .brand span{color:var(--muted);font-size:11px;font-family:'Space Mono',monospace;display:block;margin-top:-2px;letter-spacing:1px;}
+
+  .modeSwitch{display:flex;background:var(--panel2);border-radius:999px;padding:4px;border:1px solid var(--line);}
+  .modeSwitch button{
+    border:none;background:transparent;color:var(--muted);padding:8px 18px;border-radius:999px;
+    font-family:'Inter';font-weight:600;font-size:13px;cursor:pointer;transition:.2s;
+  }
+  .modeSwitch button.active{background:var(--grad);color:#0b0b0f;}
+
+  .proBtn{
+    background:linear-gradient(90deg,#f9c74f,#f9844a);border:none;color:#1a1206;padding:8px 14px;border-radius:999px;
+    font-family:'Inter';font-weight:700;font-size:12.5px;cursor:pointer;display:flex;align-items:center;gap:6px;
+    box-shadow:0 0 0 1px rgba(255,255,255,.15) inset;transition:.2s;
+  }
+  .proBtn:hover{filter:brightness(1.08);}
+  .proBtn.isPro{background:linear-gradient(90deg,#22e5ff,#7dffb3);}
+
+  .proModalWrap{
+    position:fixed;inset:0;background:rgba(6,6,9,.72);backdrop-filter:blur(4px);
+    display:flex;align-items:center;justify-content:center;z-index:200;padding:20px;
+  }
+  .proModal{
+    background:var(--panel);border:1px solid var(--line);border-radius:16px;padding:28px 26px;max-width:380px;width:100%;
+    position:relative;box-shadow:0 30px 70px -20px rgba(0,0,0,.7);
+  }
+  .proModalClose{
+    position:absolute;top:14px;right:14px;background:var(--panel2);border:1px solid var(--line);color:var(--text);
+    width:28px;height:28px;border-radius:50%;cursor:pointer;font-size:14px;
+  }
+  .proCrown{font-size:34px;text-align:center;margin-bottom:6px;}
+  .proModal h2{font-family:'Archivo Black';font-size:19px;text-align:center;margin:0 0 6px;}
+  .proSub{color:var(--muted);text-align:center;font-size:13px;margin:0 0 18px;}
+  .proFeatureList{list-style:none;padding:0;margin:0 0 20px;display:flex;flex-direction:column;gap:9px;}
+  .proFeatureList li{font-size:13px;background:var(--panel2);border:1px solid var(--line);padding:9px 12px;border-radius:9px;}
+  .proNote{color:#6a6a78;font-size:10.5px;text-align:center;margin:12px 0 0;line-height:1.5;}
+
+  .priceCard{background:var(--panel2);border:1px solid var(--line);border-radius:10px;padding:12px 14px;margin:0 0 16px;}
+  .priceRow{display:flex;justify-content:space-between;align-items:center;font-size:13px;font-weight:600;}
+  .priceTag{font-family:'Archivo Black';font-size:18px;background:linear-gradient(90deg,#f9c74f,#f9844a);-webkit-background-clip:text;background-clip:text;color:transparent;}
+
+  .payTabs{display:flex;gap:8px;margin-bottom:16px;}
+  .payTab{flex:1;background:var(--panel2);border:1px solid var(--line);color:var(--muted);padding:9px;border-radius:8px;font-weight:700;font-size:13px;cursor:pointer;}
+  .payTab.active{background:var(--grad);color:#0b0b0f;border:none;}
+  .payForm .field{margin:0 0 14px;text-align:left;}
+  .payForm .field label{display:block;font-size:11px;color:var(--muted);margin-bottom:5px;font-weight:600;}
+  .payForm .row2{margin:0 0 14px;}
+  .proBackBtn{background:none;border:none;color:var(--muted);font-size:12px;cursor:pointer;display:block;margin:12px auto 0;}
+
+  .rzpBox{background:var(--panel2);border:1px solid var(--line);border-radius:10px;padding:16px;text-align:center;margin-bottom:8px;}
+  .rzpLogo{font-size:13px;font-weight:700;color:var(--text);}
+  .jcNumber{font-family:'Space Mono',monospace;font-size:22px;font-weight:700;color:var(--accent2);letter-spacing:1px;margin-top:8px;}
+  #jcScreenshotPreview{margin-top:8px;text-align:center;}
+  #jcScreenshotPreview img{max-width:100%;max-height:160px;border-radius:8px;border:1px solid var(--line);}
+  .setupList{padding-left:20px;margin:0;display:flex;flex-direction:column;gap:10px;font-size:13px;}
+  .setupList code{background:var(--panel2);border:1px solid var(--line);padding:1px 5px;border-radius:4px;font-family:'Space Mono',monospace;font-size:11.5px;}
+  .setupList a{color:var(--accent2);}
+
+  .proCenterStep{display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:14px 0;}
+  .spinner{width:46px;height:46px;border-radius:50%;border:4px solid var(--line);border-top-color:var(--accent2);animation:spin 0.8s linear infinite;}
+  @keyframes spin{to{transform:rotate(360deg);}}
+  .successTick{
+    width:56px;height:56px;border-radius:50%;background:linear-gradient(90deg,#22e5ff,#7dffb3);
+    color:#04231a;font-size:28px;display:flex;align-items:center;justify-content:center;font-weight:800;
+    animation:pop .35s ease;
+  }
+  @keyframes pop{0%{transform:scale(0);}70%{transform:scale(1.15);}100%{transform:scale(1);}}
+
+  .tool{position:relative;}
+  .proLock{
+    position:absolute;right:8px;top:50%;transform:translateY(-50%);
+    background:linear-gradient(90deg,#f9c74f,#f9844a);color:#1a1206;font-size:9.5px;font-weight:800;
+    padding:2px 6px;border-radius:5px;letter-spacing:.5px;
+  }
+  .proSection{position:relative;}
+  .proSectionLock{
+    display:flex;flex-direction:column;align-items:center;gap:10px;background:var(--panel2);
+    border:1px dashed #f9844a;border-radius:12px;padding:18px 14px;margin:0 8px 16px;text-align:center;
+  }
+  .proSectionLock .crown{font-size:22px;}
+  .proSectionLock p{color:var(--muted);font-size:12px;margin:0;}
+  .proSectionLock button{
+    background:linear-gradient(90deg,#f9c74f,#f9844a);border:none;color:#1a1206;padding:7px 14px;border-radius:8px;
+    font-weight:700;font-size:12px;cursor:pointer;
+  }
+
+  /* layout */
+  .app{display:grid;grid-template-columns:230px 1fr 300px;gap:0;min-height:calc(100vh - 61px);}
+  @media (max-width:980px){.app{grid-template-columns:1fr;}}
+
+  .toolrail{border-right:1px solid var(--line);padding:16px 10px;background:var(--panel);}
+  .toolrail h3, .propsPanel h3{
+    font-family:'Space Mono',monospace;font-size:10px;color:var(--muted);text-transform:uppercase;
+    letter-spacing:1.5px;margin:18px 8px 8px;
+  }
+  .toolrail h3:first-child{margin-top:4px;}
+  .tool{
+    display:flex;align-items:center;gap:10px;width:100%;padding:10px 10px;border-radius:10px;
+    border:1px solid transparent;background:transparent;color:var(--text);cursor:pointer;
+    font-size:13.5px;font-family:'Inter';font-weight:500;margin-bottom:3px;transition:.15s;text-align:left;
+  }
+  .tool:hover{background:var(--panel2);}
+  .tool.active{background:var(--panel2);border-color:var(--accent1);color:#fff;}
+  .tool .ic{width:18px;text-align:center;font-size:15px;}
+
+  .stage{
+    display:flex;flex-direction:column;align-items:center;justify-content:flex-start;
+    padding:26px;gap:16px;overflow:auto;
+  }
+  .canvasWrap{
+    position:relative;background:
+      linear-gradient(45deg,#1a1a1f 25%,transparent 25%) 0 0/16px 16px,
+      linear-gradient(-45deg,#1a1a1f 25%,transparent 25%) 0 0/16px 16px,
+      linear-gradient(45deg,transparent 75%,#1a1a1f 75%) 0 0/16px 16px,
+      linear-gradient(-45deg,transparent 75%,#1a1a1f 75%) 0 0/16px 16px;
+    background-color:#101014;
+    border-radius:6px;
+    box-shadow:0 0 0 1px var(--line), 0 30px 60px -20px rgba(0,0,0,.6);
+    max-width:100%;
+  }
+  .canvasWrap::before{ /* corner-cut polaroid notch signature */
+    content:"";position:absolute;top:-1px;left:-1px;width:22px;height:22px;
+    background:var(--bg);border-bottom-right-radius:14px;border-right:1px solid var(--line);border-bottom:1px solid var(--line);
+    z-index:5;
+  }
+  canvas{display:block;max-width:100%;height:auto;border-radius:6px;cursor:crosshair;}
+  video.hiddenSrc{display:none;}
+
+  .emptyState{
+    width:min(640px,90vw);aspect-ratio:16/10;border:2px dashed var(--line);border-radius:14px;
+    display:flex;flex-direction:column;align-items:center;justify-content:center;gap:14px;
+    background:var(--panel);cursor:pointer;transition:.2s;text-align:center;padding:20px;
+  }
+  .emptyState:hover{border-color:var(--accent1);}
+  .emptyState .big{font-family:'Archivo Black';font-size:22px;background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent;}
+  .emptyState p{color:var(--muted);font-size:13px;max-width:380px;margin:0;}
+  .emptyState .hint{font-family:'Space Mono',monospace;font-size:11px;color:#5a5a68;}
+
+  .stageBar{display:flex;gap:10px;flex-wrap:wrap;justify-content:center;}
+  .btn{
+    background:var(--panel2);border:1px solid var(--line);color:var(--text);padding:9px 16px;border-radius:9px;
+    font-family:'Inter';font-weight:600;font-size:13px;cursor:pointer;display:flex;align-items:center;gap:7px;transition:.15s;
+  }
+  .btn:hover{border-color:var(--accent2);}
+  .btn.primary{background:var(--grad);color:#0b0b0f;border:none;}
+  .btn.primary:hover{filter:brightness(1.08);}
+  .btn:disabled{opacity:.4;cursor:not-allowed;}
+  .btn.danger{color:var(--danger);}
+
+  /* right props panel */
+  .propsPanel{border-left:1px solid var(--line);background:var(--panel);padding:16px;overflow-y:auto;}
+  .field{margin:0 8px 16px;}
+  .field label{display:flex;justify-content:space-between;font-size:12px;color:var(--muted);margin-bottom:6px;font-weight:600;}
+  .field label .val{color:var(--accent2);font-family:'Space Mono',monospace;}
+  input[type=range]{
+    -webkit-appearance:none;width:100%;height:4px;border-radius:2px;background:var(--line);outline:none;
+  }
+  input[type=range]::-webkit-slider-thumb{
+    -webkit-appearance:none;width:15px;height:15px;border-radius:50%;background:var(--grad);cursor:pointer;border:2px solid #0b0b0f;
+  }
+  select,input[type=text],input[type=color],input[type=number]{
+    width:100%;background:var(--panel2);border:1px solid var(--line);color:var(--text);padding:8px 10px;
+    border-radius:8px;font-family:'Inter';font-size:13px;
+  }
+  input[type=color]{padding:3px;height:36px;cursor:pointer;}
+  .row2{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin:0 8px 16px;}
+  .swatches{display:flex;gap:6px;flex-wrap:wrap;margin:0 8px 16px;}
+  .swatch{width:26px;height:26px;border-radius:50%;cursor:pointer;border:2px solid var(--line);}
+  .presetGrid{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin:0 8px 16px;}
+  .presetGrid button{
+    background:var(--panel2);border:1px solid var(--line);color:var(--text);border-radius:8px;padding:8px 6px;
+    font-size:11.5px;cursor:pointer;font-family:'Inter';font-weight:600;
+  }
+  .presetGrid button:hover{border-color:var(--accent1);}
+  .stickerGrid{display:grid;grid-template-columns:repeat(6,1fr);gap:6px;margin:0 8px 16px;}
+  .stickerGrid button{background:var(--panel2);border:1px solid var(--line);border-radius:8px;font-size:18px;padding:6px 0;cursor:pointer;}
+  .stickerGrid button:hover{border-color:var(--accent2);}
+  .layerItem{
+    display:flex;align-items:center;justify-content:space-between;background:var(--panel2);
+    border:1px solid var(--line);border-radius:8px;padding:7px 10px;margin:0 8px 6px;font-size:12.5px;
+  }
+  .layerItem span.rm{color:var(--danger);cursor:pointer;font-weight:700;}
+
+  /* timeline (video signature: filmstrip) */
+  .timeline{
+    width:100%;max-width:900px;background:var(--panel);border:1px solid var(--line);border-radius:10px;padding:14px 16px;
+  }
+  .filmstrip{
+    display:flex;height:14px;border-radius:4px;overflow:hidden;margin-bottom:10px;
+    background: repeating-linear-gradient(90deg,#26262e 0 6px, #1b1b21 6px 12px);
+  }
+  .trackRow{position:relative;height:34px;background:var(--panel2);border-radius:8px;margin-bottom:10px;}
+  .rangeTrack{position:absolute;top:0;bottom:0;background:linear-gradient(90deg,rgba(255,61,127,.35),rgba(34,229,255,.35));border-radius:8px;border:1px solid var(--accent1);}
+  .playhead{position:absolute;top:-4px;bottom:-4px;width:2px;background:#fff;box-shadow:0 0 8px var(--accent2);}
+  .timeRow{display:flex;justify-content:space-between;font-family:'Space Mono',monospace;font-size:11px;color:var(--muted);margin-bottom:6px;}
+  .transportRow{display:flex;align-items:center;gap:10px;justify-content:center;margin-top:6px;}
+  .transportRow .btn{padding:8px 12px;}
+
+  .hidden{display:none !important;}
+  input[type=file]{display:none;}
+
+  footer{
+    text-align:center;padding:16px;color:#4c4c58;font-size:11px;font-family:'Space Mono',monospace;
+    border-top:1px solid var(--line);
+  }
+
+  .toast{
+    position:fixed;bottom:22px;left:50%;transform:translateX(-50%);
+    background:var(--panel2);border:1px solid var(--accent2);color:var(--text);
+    padding:10px 18px;border-radius:9px;font-size:13px;z-index:100;opacity:0;pointer-events:none;transition:.3s;
+  }
+  .toast.show{opacity:1;transform:translate(-50%,-6px);}
+</style>
+</head>
+<body>
+<script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+<script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-app-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore-compat.js"></script>
+
+<header>
+  <div class="brand">
+    <div class="mark">H</div>
+    <div>
+      <h1>HBM Frame Editor</h1>
+      <span>PHOTO / VIDEO EDITOR</span>
+    </div>
+  </div>
+  <div class="modeSwitch">
+    <button id="modePhoto" class="active">📷 Photo</button>
+    <button id="modeVideo">🎬 Video</button>
+  </div>
+  <button class="proBtn" id="proHeaderBtn">👑 <span id="proHeaderLabel">Upgrade to Pro</span></button>
+</header>
+
+<!-- PRO UPGRADE MODAL -->
+<div class="proModalWrap hidden" id="proModalWrap">
+  <div class="proModal">
+    <button class="proModalClose" id="proModalClose">✕</button>
+
+    <!-- STEP 1: PLAN -->
+    <div id="proStepPlan">
+      <div class="proCrown">👑</div>
+      <h2>HBM Pro Unlock Karein</h2>
+      <p class="proSub">Professional-grade editing tools jo casual apps mein nahi milte.</p>
+      <ul class="proFeatureList">
+        <li>🎨 Advanced Color Grading (Shadows / Highlights tint)</li>
+        <li>🔤 Text Outline, Shadow &amp; Blend Modes</li>
+        <li>⏩ Video Speed Control (Slow-mo / Fast-forward)</li>
+        <li>🟩 Green Screen (Chroma Key) Removal</li>
+        <li>✨ Aur naye Pro tools jald hi</li>
+      </ul>
+      <div class="priceCard">
+        <div class="priceRow"><span>Pro Plan — One-time</span><span class="priceTag">Rs 799</span></div>
+      </div>
+      <button class="btn primary proUnlockBtn" id="proGoToPayBtn" style="width:100%;justify-content:center;">📲 JazzCash se Pay karein</button>
+      <p class="proNote">Payment ke baad Pro tools unlock ho jaayenge. <a href="#" id="proSetupLink" style="color:var(--accent2);">Setup Guide (Owner)</a></p>
+    </div>
+
+    <!-- STEP 2: PAYMENT (JazzCash manual flow) -->
+    <div id="proStepPay" class="hidden">
+      <h2 style="margin-top:6px;">JazzCash Se Pay Karein</h2>
+      <p class="proSub">Total: <b style="color:var(--text);">Rs 799</b></p>
+
+      <div class="rzpBox">
+        <div class="rzpLogo">📲 JazzCash Number</div>
+        <div class="jcNumber" id="jcNumberDisplay">0300-XXXXXXX</div>
+        <p style="color:var(--muted);font-size:12px;margin:8px 0 0;">1) Apne JazzCash app se is number par <b>Rs 799</b> bhejein.<br>2) Neeche apna Transaction ID (TID) daalein.</p>
+      </div>
+
+      <form id="jazzcashForm" style="margin-top:16px;">
+        <div class="field"><label>JazzCash Transaction ID (TID)</label><input type="text" id="jcTid" placeholder="e.g. 123456789012" required></div>
+        <div class="field"><label>Aapka Email (receipt/confirmation ke liye)</label><input type="email" id="jcEmail" placeholder="aapka@email.com" required></div>
+        <div class="field"><label>Aapka JazzCash Number (jisse pay kiya)</label><input type="text" id="jcSenderNumber" placeholder="03XX-XXXXXXX" required></div>
+        <div class="field">
+          <label>Payment Screenshot</label>
+          <input type="file" id="jcScreenshot" accept="image/*" required>
+          <div id="jcScreenshotPreview" class="hidden"><img id="jcScreenshotImg" alt="Screenshot preview"></div>
+        </div>
+        <button type="submit" class="btn primary" style="width:100%;justify-content:center;">✅ Maine Pay Kar Diya — Unlock Karein</button>
+      </form>
+
+      <div id="jcNotConfigured" class="hidden" style="margin-top:14px;">
+        <p style="color:var(--danger);font-size:12px;text-align:center;">⚠️ JazzCash number set nahi hai. Neeche "Setup Guide" dekhein.</p>
+      </div>
+
+      <button class="proBackBtn" id="proBackBtn">← Wapas jaayein</button>
+      <p class="proNote">⚠️ Yeh ek manual/honesty-based system hai — Transaction ID automatically JazzCash se verify nahi hota (uske liye official Merchant API chahiye). App owner ko email par notification jaayegi taaki wo baad mein manually confirm kar sake.</p>
+    </div>
+
+    <!-- STEP: SETUP GUIDE (for the app owner, not the paying user) -->
+    <div id="proStepSetup" class="hidden">
+      <h2 style="margin-top:6px;">Setup Guide (App Owner ke liye)</h2>
+      <ol class="setupList">
+        <li>Is file ke code mein <code>JAZZCASH_NUMBER</code> variable mein apna JazzCash mobile number daalein.</li>
+        <li><a href="https://www.emailjs.com/" target="_blank" rel="noopener">emailjs.com</a> par free account banayein (bina backend ke email bhejne ke liye).</li>
+        <li>EmailJS dashboard se apni <b>Service ID</b>, <b>Template ID</b>, aur <b>Public Key</b> copy karein.</li>
+        <li>Code mein <code>EMAILJS_SERVICE_ID</code>, <code>EMAILJS_TEMPLATE_ID</code>, aur <code>EMAILJS_PUBLIC_KEY</code> variables mein paste karein.</li>
+        <li>EmailJS template mein <code>{{tid}}</code>, <code>{{sender_email}}</code>, <code>{{sender_number}}</code> fields use karein taaki details email mein aayein.</li>
+        <li><a href="https://console.firebase.google.com/" target="_blank" rel="noopener">console.firebase.google.com</a> par free project banayein, phir <b>Firestore Database</b> enable karein (test mode se shuru karein).</li>
+        <li>Project Settings → General → "Your apps" → Web app add karke apna <b>Firebase Config</b> object copy karein.</li>
+        <li>Code mein <code>FIREBASE_CONFIG</code> variable mein poora config paste karein — isse unlock status save aur persist hoga.</li>
+        <li>Kisi user ka request approve karne ke liye: Firebase Console → Firestore → <code>proRequests</code> collection kholein, us document ka <code>status</code> field <code>"pending"</code> se <code>"approved"</code> karein. Reject karne ke liye <code>"rejected"</code> karein.</li>
+      </ol>
+      <p class="proNote" style="margin-top:10px;">⚠️ Security note: is system mein koi real payment verification nahi hai — koi bhi fake Transaction ID daal kar unlock kar sakta hai. Yeh sirf tab tak theek hai jab tak scale chhota ho aur aap manually TID ko apne JazzCash app/statement mein check karte rahein. Bade scale ke liye JazzCash Merchant API (business registration ke saath) chahiye hoga.</p>
+      <button class="proBackBtn" id="proSetupBackBtn">← Wapas jaayein</button>
+    </div>
+
+    <!-- STEP 3: PROCESSING -->
+    <div id="proStepProcessing" class="hidden proCenterStep">
+      <div class="spinner"></div>
+      <p style="margin-top:14px;color:var(--muted);">Payment process ho raha hai...</p>
+    </div>
+
+    <!-- STEP 4: SUCCESS -->
+    <div id="proStepSuccess" class="hidden proCenterStep">
+      <div class="successTick">✔</div>
+      <h2 style="margin:14px 0 4px;">Payment Safal! 🎉</h2>
+      <p class="proSub">Pro Tools ab unlock ho gaye hain.</p>
+      <button class="btn primary" id="proDoneBtn" style="width:100%;justify-content:center;margin-top:10px;">Shuru Karein</button>
+    </div>
+  </div>
+</div>
+
+
+<div class="app">
+  <!-- LEFT TOOL RAIL -->
+  <div class="toolrail" id="toolrail">
+    <h3>File</h3>
+    <label class="tool" id="btnUpload" for="fileInput" style="cursor:pointer;"><span class="ic">⬆️</span> Import karein</label>
+
+    <h3 id="toolsHeading">Tools</h3>
+    <button class="tool active" data-tool="adjust"><span class="ic">🎚️</span> Adjust</button>
+    <button class="tool" data-tool="filters"><span class="ic">✨</span> Filters</button>
+    <button class="tool photoOnly" data-tool="crop"><span class="ic">⬛</span> Crop / Rotate</button>
+    <button class="tool" data-tool="text"><span class="ic">🔤</span> Text</button>
+    <button class="tool" data-tool="stickers"><span class="ic">😀</span> Stickers</button>
+    <button class="tool photoOnly" data-tool="draw"><span class="ic">🖌️</span> Draw</button>
+    <button class="tool videoOnly hidden" data-tool="audio"><span class="ic">🎵</span> Audio</button>
+    <button class="tool" data-tool="layers"><span class="ic">📚</span> Layers</button>
+
+    <h3>Pro Tools <span style="color:#f9844a;">👑</span></h3>
+    <button class="tool photoOnly" data-tool="colorgrade" data-pro="true"><span class="ic">🎨</span> Color Grade <span class="proLock proBadge">PRO</span></button>
+    <button class="tool videoOnly hidden" data-tool="speed" data-pro="true"><span class="ic">⏩</span> Speed Control <span class="proLock proBadge">PRO</span></button>
+    <button class="tool videoOnly hidden" data-tool="chroma" data-pro="true"><span class="ic">🟩</span> Green Screen <span class="proLock proBadge">PRO</span></button>
+  </div>
+
+  <!-- CENTER STAGE -->
+  <div class="stage">
+    <input type="file" id="fileInput" accept="image/*">
+    <input type="file" id="fileInputVideo" accept="video/*">
+
+    <label class="emptyState" id="emptyState" for="fileInput">
+      <div class="big">Yahan click karein ya file drop karein</div>
+      <p>Photo mode me JPG/PNG upload karein. Video mode me MP4/WebM upload karein — trim, filter aur text overlay ke saath export bhi kar sakte hain.</p>
+      <div class="hint">.jpg · .png · .webp · .mp4 · .webm</div>
+    </label>
+
+    <div class="canvasWrap hidden" id="canvasWrap">
+      <canvas id="mainCanvas" width="800" height="600"></canvas>
+    </div>
+    <video id="srcVideo" class="hiddenSrc" playsinline muted></video>
+
+    <div class="stageBar hidden" id="stageBar">
+      <button class="btn" id="btnUndo">↩️ Undo</button>
+      <button class="btn" id="btnReset">🔄 Reset</button>
+      <button class="btn primary" id="btnExport">⬇️ Download</button>
+    </div>
+
+    <!-- VIDEO TIMELINE -->
+    <div class="timeline hidden" id="videoTimeline">
+      <div class="filmstrip"></div>
+      <div class="timeRow"><span id="tStart">0:00</span><span id="tCur">0:00</span><span id="tEnd">0:00</span></div>
+      <div class="trackRow" id="trackRow">
+        <div class="rangeTrack" id="rangeTrack"></div>
+        <div class="playhead" id="playhead"></div>
+      </div>
+      <div class="row2" style="margin:0 0 6px;">
+        <div>
+          <label style="font-size:11px;color:var(--muted);">Start</label>
+          <input type="range" id="trimStart" min="0" max="100" value="0">
+        </div>
+        <div>
+          <label style="font-size:11px;color:var(--muted);">End</label>
+          <input type="range" id="trimEnd" min="0" max="100" value="100">
+        </div>
+      </div>
+      <div class="transportRow">
+        <button class="btn" id="btnPlay">▶️ Play</button>
+        <button class="btn" id="btnPause">⏸️ Pause</button>
+        <button class="btn primary" id="btnExportVideo">⬇️ Export Video</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- RIGHT PROPERTIES -->
+  <div class="propsPanel" id="propsPanel">
+    <!-- ADJUST -->
+    <div class="panelSection" id="panel-adjust">
+      <h3>Adjust</h3>
+      <div class="field"><label>Brightness <span class="val" id="v_bri">100%</span></label><input type="range" id="s_bri" min="0" max="200" value="100"></div>
+      <div class="field"><label>Contrast <span class="val" id="v_con">100%</span></label><input type="range" id="s_con" min="0" max="200" value="100"></div>
+      <div class="field"><label>Saturation <span class="val" id="v_sat">100%</span></label><input type="range" id="s_sat" min="0" max="200" value="100"></div>
+      <div class="field"><label>Hue <span class="val" id="v_hue">0°</span></label><input type="range" id="s_hue" min="0" max="360" value="0"></div>
+      <div class="field"><label>Blur <span class="val" id="v_blur">0px</span></label><input type="range" id="s_blur" min="0" max="20" value="0"></div>
+      <div class="field"><label>Vignette <span class="val" id="v_vig">0%</span></label><input type="range" id="s_vig" min="0" max="100" value="0"></div>
+    </div>
+
+    <!-- FILTERS -->
+    <div class="panelSection hidden" id="panel-filters">
+      <h3>Filter Presets</h3>
+      <div class="presetGrid">
+        <button data-preset="none">Original</button>
+        <button data-preset="mono">Mono</button>
+        <button data-preset="sepia">Sepia</button>
+        <button data-preset="vivid">Vivid+</button>
+        <button data-preset="cold">Cold</button>
+        <button data-preset="warm">Warm</button>
+        <button data-preset="fade">Fade</button>
+        <button data-preset="noir">Noir</button>
+      </div>
+    </div>
+
+    <!-- CROP -->
+    <div class="panelSection hidden" id="panel-crop">
+      <h3>Rotate / Flip</h3>
+      <div class="row2">
+        <button class="btn" id="rotL">⟲ 90°</button>
+        <button class="btn" id="rotR">⟳ 90°</button>
+      </div>
+      <div class="row2">
+        <button class="btn" id="flipH">↔️ Flip H</button>
+        <button class="btn" id="flipV">↕️ Flip V</button>
+      </div>
+      <h3>Crop</h3>
+      <div class="presetGrid">
+        <button data-ratio="free">Free</button>
+        <button data-ratio="1:1">1:1</button>
+        <button data-ratio="9:16">9:16 Reel</button>
+        <button data-ratio="16:9">16:9</button>
+      </div>
+      <div class="field" style="margin-top:4px;"><small style="color:var(--muted);">Canvas par drag karke crop area select karein, phir Apply dabayein.</small></div>
+      <button class="btn primary" id="applyCrop" style="width:calc(100% - 16px);margin:0 8px;">Apply Crop</button>
+    </div>
+
+    <!-- TEXT -->
+    <div class="panelSection hidden" id="panel-text">
+      <h3>Add Text</h3>
+      <div class="field"><input type="text" id="textInput" placeholder="Yahan text likhein..."></div>
+      <div class="row2">
+        <input type="color" id="textColor" value="#ffffff">
+        <select id="textFont">
+          <option value="Archivo Black">Bold</option>
+          <option value="Inter">Clean</option>
+          <option value="Space Mono">Mono</option>
+        </select>
+      </div>
+      <div class="field"><label>Size <span class="val" id="v_tsize">42px</span></label><input type="range" id="textSize" min="12" max="120" value="42"></div>
+
+      <div class="field videoOnly hidden">
+        <label>Animation</label>
+        <select id="textAnim">
+          <option value="none">Koi Animation Nahi</option>
+          <option value="fade">Fade In</option>
+          <option value="slideL">Slide In (Left)</option>
+          <option value="slideT">Slide In (Top)</option>
+          <option value="pop">Pop / Bounce</option>
+          <option value="typewriter">Typewriter</option>
+        </select>
+      </div>
+      <div class="row2 videoOnly hidden">
+        <div>
+          <label style="font-size:11px;color:var(--muted);">Start (sec)</label>
+          <input type="number" id="animStart" min="0" step="0.1" value="0">
+        </div>
+        <div>
+          <label style="font-size:11px;color:var(--muted);">Duration (sec)</label>
+          <input type="number" id="animDur" min="0.1" step="0.1" value="1">
+        </div>
+      </div>
+
+      <button class="btn primary" id="addTextBtn" style="width:calc(100% - 16px);margin:0 8px 16px;">+ Text Layer Add karein</button>
+      <small style="color:var(--muted);margin:0 8px;display:block;">Text ko canvas par click-drag karke move karein.</small>
+
+      <h3>Text Effects <span style="color:#f9844a;">👑 PRO</span></h3>
+      <div id="textFxLocked" class="proSectionLock" style="margin:0 8px 16px;">
+        <div class="crown">👑</div>
+        <p>Outline, Shadow aur Blend Modes Pro mein unlock karein.</p>
+        <button class="unlockInline">Unlock Pro</button>
+      </div>
+      <div id="textFxUnlocked" class="hidden">
+        <div class="row2">
+          <div>
+            <label style="font-size:11px;color:var(--muted);">Outline</label>
+            <input type="color" id="textOutlineColor" value="#000000">
+          </div>
+          <div>
+            <label style="font-size:11px;color:var(--muted);">Outline Width</label>
+            <input type="range" id="textOutlineWidth" min="0" max="10" value="0">
+          </div>
+        </div>
+        <div class="field">
+          <label><input type="checkbox" id="textShadowToggle" style="width:auto;margin-right:6px;">Drop Shadow</label>
+        </div>
+        <div class="field">
+          <label>Blend Mode</label>
+          <select id="textBlend">
+            <option value="source-over">Normal</option>
+            <option value="multiply">Multiply</option>
+            <option value="screen">Screen</option>
+            <option value="overlay">Overlay</option>
+            <option value="difference">Difference</option>
+          </select>
+        </div>
+      </div>
+    </div>
+
+    <!-- COLOR GRADE (PRO) -->
+    <div class="panelSection hidden" id="panel-colorgrade">
+      <h3>Color Grade <span style="color:#f9844a;">👑 PRO</span></h3>
+      <div id="colorGradeLocked" class="proSectionLock" style="margin:0 8px 16px;">
+        <div class="crown">👑</div>
+        <p>Shadows aur Highlights ko alag-alag color se tint karein — cinematic look ke liye.</p>
+        <button class="unlockInline">Unlock Pro</button>
+      </div>
+      <div id="colorGradeUnlocked" class="hidden">
+        <div class="field"><label>Shadow Tint</label><input type="color" id="shadowTint" value="#1b2a4a"></div>
+        <div class="field"><label>Shadow Intensity <span class="val" id="v_shadowInt">0%</span></label><input type="range" id="shadowInt" min="0" max="100" value="0"></div>
+        <div class="field"><label>Highlight Tint</label><input type="color" id="highlightTint" value="#ffb35c"></div>
+        <div class="field"><label>Highlight Intensity <span class="val" id="v_highInt">0%</span></label><input type="range" id="highInt" min="0" max="100" value="0"></div>
+      </div>
+    </div>
+
+    <!-- SPEED (PRO, video) -->
+    <div class="panelSection hidden" id="panel-speed">
+      <h3>Speed Control <span style="color:#f9844a;">👑 PRO</span></h3>
+      <div id="speedLocked" class="proSectionLock" style="margin:0 8px 16px;">
+        <div class="crown">👑</div>
+        <p>Video ko slow-motion ya fast-forward karein.</p>
+        <button class="unlockInline">Unlock Pro</button>
+      </div>
+      <div id="speedUnlocked" class="hidden">
+        <div class="field"><label>Playback Speed <span class="val" id="v_speed">1.0x</span></label><input type="range" id="speedSlider" min="25" max="200" value="100"></div>
+        <div class="presetGrid">
+          <button data-speed="50">0.5x Slow</button>
+          <button data-speed="100">1x Normal</button>
+          <button data-speed="150">1.5x Fast</button>
+          <button data-speed="200">2x Fast</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- GREEN SCREEN (PRO, video) -->
+    <div class="panelSection hidden" id="panel-chroma">
+      <h3>Green Screen <span style="color:#f9844a;">👑 PRO</span></h3>
+      <div id="chromaLocked" class="proSectionLock" style="margin:0 8px 16px;">
+        <div class="crown">👑</div>
+        <p>Green background ko transparent karke naya background dalein.</p>
+        <button class="unlockInline">Unlock Pro</button>
+      </div>
+      <div id="chromaUnlocked" class="hidden">
+        <div class="field"><label><input type="checkbox" id="chromaEnable" style="width:auto;margin-right:6px;">Green Screen Remove Karein</label></div>
+        <div class="field"><label>Sensitivity <span class="val" id="v_chromaSens">50%</span></label><input type="range" id="chromaSens" min="10" max="90" value="50"></div>
+        <div class="field"><label>Background Color</label><input type="color" id="chromaBg" value="#0b0b0f"></div>
+        <small style="color:var(--muted);margin:0 8px;display:block;">Note: pixel-level processing hai, thoda performance heavy ho sakta hai.</small>
+      </div>
+    </div>
+
+
+    <!-- STICKERS -->
+    <div class="panelSection hidden" id="panel-stickers">
+      <h3>Stickers / Emoji</h3>
+      <div class="stickerGrid">
+        <button>❤️</button><button>🔥</button><button>⭐</button><button>😂</button><button>😎</button><button>👍</button>
+        <button>🎉</button><button>✨</button><button>💯</button><button>📌</button><button>🌈</button><button>⚡</button>
+      </div>
+      <small style="color:var(--muted);margin:0 8px;display:block;">Sticker par click karke add karein, phir drag karke position set karein.</small>
+    </div>
+
+    <!-- DRAW -->
+    <div class="panelSection hidden" id="panel-draw">
+      <h3>Brush</h3>
+      <div class="field"><input type="color" id="drawColor" value="#ff3d7f"></div>
+      <div class="field"><label>Size <span class="val" id="v_bsize">6px</span></label><input type="range" id="drawSize" min="1" max="40" value="6"></div>
+      <button class="btn" id="toggleDraw" style="width:calc(100% - 16px);margin:0 8px 10px;">🖌️ Drawing Mode: OFF</button>
+      <button class="btn danger" id="clearDraw" style="width:calc(100% - 16px);margin:0 8px;">Clear Drawing</button>
+    </div>
+
+    <!-- AUDIO -->
+    <div class="panelSection hidden" id="panel-audio">
+      <h3>Background Music</h3>
+      <input type="file" id="fileInputAudio" accept="audio/*">
+      <div class="field"><button class="btn" id="btnUploadAudio" style="width:100%;">🎵 Audio file upload karein</button></div>
+      <div class="field" id="audioNameField" style="display:none;">
+        <small style="color:var(--accent2);" id="audioFileName"></small>
+      </div>
+      <div class="field"><label>Music Volume <span class="val" id="v_musicVol">80%</span></label><input type="range" id="musicVol" min="0" max="100" value="80"></div>
+      <button class="btn danger" id="removeAudio" style="width:calc(100% - 16px);margin:0 8px 16px;">Music Hatayein</button>
+
+      <h3>Original Video Audio</h3>
+      <div class="field"><label>Video Volume <span class="val" id="v_videoVol">100%</span></label><input type="range" id="videoVol" min="0" max="100" value="100"></div>
+      <small style="color:var(--muted);margin:0 8px;display:block;">Export ke time dono audio (video + music) mix ho kar final file mein aayenge.</small>
+    </div>
+
+    <!-- LAYERS -->
+    <div class="panelSection hidden" id="panel-layers">
+      <h3>Layers (Text / Stickers)</h3>
+      <div id="layerList"><small style="color:var(--muted);margin:0 8px;display:block;">Koi layer nahi hai abhi.</small></div>
+    </div>
+  </div>
+</div>
+
+<footer>HBM Frame Editor — sab kuch aapke browser mein hi chalta hai, koi file server par upload nahi hoti.</footer>
+<div class="toast" id="toast"></div>
+
+<script>
+(function(){
+  const $ = s => document.querySelector(s);
+  const $$ = s => document.querySelectorAll(s);
+  const toast = (msg)=>{ const t=$('#toast'); t.textContent=msg; t.classList.add('show'); setTimeout(()=>t.classList.remove('show'),1800); };
+
+  let mode = 'photo'; // photo | video
+  const canvas = $('#mainCanvas');
+  const ctx = canvas.getContext('2d');
+  const srcVideo = $('#srcVideo');
+
+  // ---------- state ----------
+  let baseImage = null;        // Image object (photo mode source)
+  let rotation = 0;            // 0/90/180/270
+  let flipH_ = false, flipV_ = false;
+  let adjust = {bri:100,con:100,sat:100,hue:0,blur:0,vig:0};
+  let colorGrade = {shadowTint:'#1b2a4a', shadowInt:0, highlightTint:'#ffb35c', highInt:0};
+  let textFx = {outline:'#000000', outlineW:0, shadow:false, blend:'source-over'};
+  let videoSpeed = 1.0;
+  let chroma = {enabled:false, sens:50, bg:'#0b0b0f'};
+  let activePreset = 'none';
+  let drawLayer = document.createElement('canvas'); // persistent freehand drawing (photo mode), same size as base
+  let drawCtx = drawLayer.getContext('2d');
+  let drawing = false, drawMode=false, lastX=0,lastY=0;
+  let objects = []; // {type:'text'|'sticker', x,y, text, color, font, size}
+  let dragObj = null, dragOffX=0, dragOffY=0;
+  let history = [];
+  let cropRect = null; let cropping=false; let cropStart=null;
+  let animReq = null;
+
+  // ---------- mode switch ----------
+  $('#modePhoto').onclick = ()=>switchMode('photo');
+  $('#modeVideo').onclick = ()=>switchMode('video');
+  function switchMode(m){
+    mode = m;
+    $('#modePhoto').classList.toggle('active', m==='photo');
+    $('#modeVideo').classList.toggle('active', m==='video');
+    $('#emptyState').setAttribute('for', m==='photo' ? 'fileInput' : 'fileInputVideo');
+    $('#btnUpload').setAttribute('for', m==='photo' ? 'fileInput' : 'fileInputVideo');
+    resetAll();
+    $('#videoTimeline').classList.toggle('hidden', m!=='video');
+    $('#btnExport').classList.toggle('hidden', m==='video');
+    $('#btnExportVideo') && ($('#btnExportVideo').style.display = m==='video' ? 'flex':'none');
+    $$('.photoOnly').forEach(el=>el.classList.toggle('hidden', m!=='photo'));
+    $$('.videoOnly').forEach(el=>el.classList.toggle('hidden', m!=='video'));
+    // if a now-hidden tool was active, fall back to Adjust
+    const activeTool = $('.tool.active');
+    if(activeTool && activeTool.classList.contains('hidden')){
+      $$('.tool[data-tool]').forEach(b=>b.classList.remove('active'));
+      $('.tool[data-tool="adjust"]').classList.add('active');
+      $$('.panelSection').forEach(p=>p.classList.add('hidden'));
+      $('#panel-adjust').classList.remove('hidden');
+    }
+    $('#emptyState').classList.remove('hidden');
+    $('#canvasWrap').classList.add('hidden');
+    $('#stageBar').classList.add('hidden');
+  }
+
+  function resetAll(){
+    if(animReq) cancelAnimationFrame(animReq);
+    baseImage=null; rotation=0; flipH_=false; flipV_=false;
+    adjust={bri:100,con:100,sat:100,hue:0,blur:0,vig:0};
+    activePreset='none'; objects=[]; history=[]; cropRect=null;
+    updateAdjustUI(); renderLayerList();
+    srcVideo.pause(); srcVideo.removeAttribute('src'); srcVideo.load();
+    if(musicEl){ musicEl.pause(); }
+  }
+
+  // ---------- upload ----------
+  $('#emptyState').addEventListener('dragover', e=>{e.preventDefault(); e.currentTarget.style.borderColor='var(--accent2)';});
+  $('#emptyState').addEventListener('dragleave', e=>{e.currentTarget.style.borderColor='';});
+  $('#emptyState').addEventListener('drop', e=>{
+    e.preventDefault();
+    const f = e.dataTransfer.files[0]; if(!f) return;
+    if(mode==='photo') loadImageFile(f); else loadVideoFile(f);
+  });
+
+  $('#fileInput').addEventListener('change', e=>{ if(e.target.files[0]) loadImageFile(e.target.files[0]); });
+  $('#fileInputVideo').addEventListener('change', e=>{ if(e.target.files[0]) loadVideoFile(e.target.files[0]); });
+
+  function loadImageFile(file){
+    const img = new Image();
+    img.onload = ()=>{
+      baseImage = img;
+      canvas.width = img.width; canvas.height = img.height;
+      drawLayer.width = img.width; drawLayer.height = img.height;
+      drawCtx.clearRect(0,0,drawLayer.width,drawLayer.height);
+      $('#emptyState').classList.add('hidden');
+      $('#canvasWrap').classList.remove('hidden');
+      $('#stageBar').classList.remove('hidden');
+      renderPhoto();
+      toast('Photo load ho gayi ✔');
+    };
+    img.src = URL.createObjectURL(file);
+  }
+
+  function loadVideoFile(file){
+    srcVideo.src = URL.createObjectURL(file);
+    srcVideo.onloadedmetadata = ()=>{
+      canvas.width = srcVideo.videoWidth; canvas.height = srcVideo.videoHeight;
+      $('#emptyState').classList.add('hidden');
+      $('#canvasWrap').classList.remove('hidden');
+      $('#stageBar').classList.add('hidden');
+      $('#videoTimeline').classList.remove('hidden');
+      $('#trimStart').max = 1000; $('#trimEnd').max=1000; $('#trimEnd').value=1000; $('#trimStart').value=0;
+      $('#tEnd').textContent = fmtTime(srcVideo.duration);
+      updateRangeTrack();
+      drawVideoFrame();
+      toast('Video load ho gayi ✔');
+    };
+  }
+
+  function fmtTime(s){ if(!isFinite(s)) return '0:00'; const m=Math.floor(s/60), sec=Math.floor(s%60); return m+':'+String(sec).padStart(2,'0'); }
+
+  // ---------- PRO / premium (JazzCash manual pay + EmailJS notify + Firebase persistence) ----------
+  //
+  // ⚙️ APP OWNER: apni details yahan configure karein.
+  const JAZZCASH_NUMBER = "0301-2050817";
+  const PRICE_PKR = 799;
+  const EMAILJS_SERVICE_ID  = "service_w7kshrz";
+  const EMAILJS_TEMPLATE_ID = "template_1h3oqob";
+  const EMAILJS_PUBLIC_KEY  = "v46EVp6YXF52ZJNsZ";
+  const FIREBASE_CONFIG = {
+    apiKey: "AIzaSyA_teG5xwVnKaIyErZzEgnuqY0i_Gy6mKA",
+    authDomain: "earn-puzzle-54f08.firebaseapp.com",
+    projectId: "earn-puzzle-54f08",
+    storageBucket: "earn-puzzle-54f08.firebasestorage.app",
+    messagingSenderId: "728824881862",
+    appId: "1:728824881862:web:b7fe3bd91006ad15e12dc7"
+  };
+
+  // ---- Firebase init (safe no-op if not configured) ----
+  const firebaseConfigured = FIREBASE_CONFIG.apiKey && !FIREBASE_CONFIG.apiKey.includes('YOUR_API_KEY');
+  let db = null;
+  if(firebaseConfigured && typeof firebase!=='undefined'){
+    try{ firebase.initializeApp(FIREBASE_CONFIG); db = firebase.firestore(); }
+    catch(err){ console.warn('Firebase init failed:', err); }
+  }
+
+  // ---- Device ID (identifies this browser across visits) ----
+  function getDeviceId(){
+    let id = localStorage.getItem('hbmDeviceId');
+    if(!id){
+      id = (crypto.randomUUID ? crypto.randomUUID() : 'dev-'+Date.now()+'-'+Math.random().toString(36).slice(2));
+      localStorage.setItem('hbmDeviceId', id);
+    }
+    return id;
+  }
+  const deviceId = getDeviceId();
+
+  let isPro = false;
+  let pendingUnlockCallback = null; // called after successful payment, to open the tool they wanted
+  const proModal = $('#proModalWrap');
+  const proSteps = ['proStepPlan','proStepPay','proStepProcessing','proStepSuccess','proStepSetup'];
+  function showProStep(id){
+    proSteps.forEach(s=> $('#'+s).classList.toggle('hidden', s!==id));
+  }
+  function openProModal(afterUnlock){
+    pendingUnlockCallback = afterUnlock || null;
+    showProStep('proStepPlan');
+    $('#jcNumberDisplay').textContent = JAZZCASH_NUMBER;
+    proModal.classList.remove('hidden');
+  }
+  function closeProModal(){ proModal.classList.add('hidden'); }
+  $('#proHeaderBtn').onclick = ()=>{ if(!isPro) openProModal(); };
+  $('#proModalClose').onclick = closeProModal;
+  proModal.addEventListener('click', e=>{ if(e.target===proModal) closeProModal(); });
+  $$('.unlockInline').forEach(b=> b.onclick = ()=>openProModal());
+
+  $('#proGoToPayBtn').onclick = ()=> showProStep('proStepPay');
+  $('#proBackBtn').onclick = ()=> showProStep('proStepPlan');
+  $('#proSetupLink').onclick = (e)=>{ e.preventDefault(); showProStep('proStepSetup'); };
+  $('#proSetupBackBtn').onclick = ()=> showProStep('proStepPlan');
+
+  // init EmailJS if the library loaded and a public key is configured
+  const emailConfigured = EMAILJS_PUBLIC_KEY && !EMAILJS_PUBLIC_KEY.includes('YOUR_PUBLIC_KEY');
+  if(emailConfigured && typeof emailjs!=='undefined'){
+    try{ emailjs.init({ publicKey: EMAILJS_PUBLIC_KEY }); }catch(err){}
+  }
+
+  // ---- On load: restore unlock state (local flag, overridden by Firestore if it says rejected) ----
+  (function restoreProState(){
+    const localFlag = localStorage.getItem('hbmProUnlocked')==='true';
+    if(localFlag){ silentUnlockPro(); }
+    if(db){
+      db.collection('proRequests').where('deviceId','==',deviceId)
+        .orderBy('createdAt','desc').limit(1).get()
+        .then(snap=>{
+          if(snap.empty) return;
+          const status = snap.docs[0].data().status;
+          if(status==='approved'){ silentUnlockPro(); }
+          else if(status==='rejected'){
+            isPro=false; localStorage.removeItem('hbmProUnlocked');
+            $('#proHeaderBtn').classList.remove('isPro');
+            $('#proHeaderLabel').textContent='Upgrade to Pro';
+          }
+        })
+        .catch(err=> console.warn('Firestore status check failed:', err));
+    }
+  })();
+
+  // ---- screenshot preview + resize helper ----
+  let screenshotDataUrl = null;
+  $('#jcScreenshot').addEventListener('change', e=>{
+    const file = e.target.files[0];
+    if(!file){ screenshotDataUrl=null; $('#jcScreenshotPreview').classList.add('hidden'); return; }
+    const img = new Image();
+    img.onload = ()=>{
+      // resize down so it stays small enough for a Firestore doc / email
+      const maxW = 480;
+      const scale = Math.min(1, maxW/img.width);
+      const c = document.createElement('canvas');
+      c.width = img.width*scale; c.height = img.height*scale;
+      const cctx = c.getContext('2d');
+      cctx.drawImage(img,0,0,c.width,c.height);
+      screenshotDataUrl = c.toDataURL('image/jpeg', 0.6);
+      $('#jcScreenshotImg').src = screenshotDataUrl;
+      $('#jcScreenshotPreview').classList.remove('hidden');
+    };
+    img.src = URL.createObjectURL(file);
+  });
+
+  $('#jazzcashForm').addEventListener('submit', e=>{
+    e.preventDefault();
+    const numConfigured = JAZZCASH_NUMBER && !JAZZCASH_NUMBER.includes('XXXXXXX');
+    if(!numConfigured){
+      $('#jcNotConfigured').classList.remove('hidden');
+      toast('JazzCash number configure nahi hai — Setup Guide dekhein');
+      return;
+    }
+    const tid = $('#jcTid').value.trim();
+    const email = $('#jcEmail').value.trim();
+    const senderNumber = $('#jcSenderNumber').value.trim();
+    if(!tid || !email || !senderNumber){ toast('Sab fields bharein'); return; }
+    if(!screenshotDataUrl){ toast('Payment ka screenshot upload karein'); return; }
+
+    showProStep('proStepProcessing');
+
+    // Save the claim to Firestore so the owner can review/approve it later,
+    // and so this device's unlock status can be looked up on future visits.
+    const saveToFirestorePromise = db
+      ? db.collection('proRequests').add({
+          deviceId, tid, email, senderNumber,
+          amount: PRICE_PKR, status: 'pending',
+          screenshot: screenshotDataUrl,
+          createdAt: firebase.firestore.FieldValue.serverTimestamp()
+        })
+      : Promise.resolve('firestore-not-configured');
+
+    // Notify the app owner by email (client-side, via EmailJS — no backend needed).
+    // ⚠️ This does NOT verify with JazzCash that the payment actually happened —
+    // it just tells the owner "someone claims they paid, here's the TID/screenshot they gave".
+    const sendEmailPromise = (emailConfigured && typeof emailjs!=='undefined')
+      ? emailjs.send(EMAILJS_SERVICE_ID, EMAILJS_TEMPLATE_ID, {
+          tid: tid, sender_email: email, sender_number: senderNumber,
+          amount: 'Rs '+PRICE_PKR, time: new Date().toLocaleString(),
+          screenshot: screenshotDataUrl
+        })
+      : Promise.resolve('email-not-configured');
+
+    Promise.allSettled([saveToFirestorePromise, sendEmailPromise])
+      .then(results=>{
+        results.forEach(r=>{ if(r.status==='rejected') console.warn('Pro-unlock step failed:', r.reason); });
+      })
+      .finally(()=>{
+        setTimeout(()=>{
+          localStorage.setItem('hbmProUnlocked','true'); // trust-based instant unlock, this device only
+          unlockPro();
+          showProStep('proStepSuccess');
+          $('#jazzcashForm').reset();
+          screenshotDataUrl = null;
+          $('#jcScreenshotPreview').classList.add('hidden');
+        }, 700);
+      });
+  });
+
+  $('#proDoneBtn').onclick = ()=>{
+    closeProModal();
+    if(pendingUnlockCallback){ pendingUnlockCallback(); pendingUnlockCallback=null; }
+  };
+
+  function unlockPro(){
+    isPro = true;
+    $('#proHeaderBtn').classList.add('isPro');
+    $('#proHeaderLabel').textContent = 'Pro Active ✔';
+    $$('.proLock').forEach(el=>el.style.display='none');
+    $$('.proSectionLock').forEach(el=>el.classList.add('hidden'));
+    $('#textFxUnlocked').classList.remove('hidden');
+    $('#colorGradeUnlocked').classList.remove('hidden');
+    $('#speedUnlocked').classList.remove('hidden');
+    $('#chromaUnlocked').classList.remove('hidden');
+    toast('Payment safal ✔ Pro tools unlock ho gaye');
+  }
+  // same as unlockPro() but no toast/modal noise — used when restoring state on page load
+  function silentUnlockPro(){
+    isPro = true;
+    $('#proHeaderBtn').classList.add('isPro');
+    $('#proHeaderLabel').textContent = 'Pro Active ✔';
+    $$('.proLock').forEach(el=>el.style.display='none');
+    $$('.proSectionLock').forEach(el=>el.classList.add('hidden'));
+    $('#textFxUnlocked').classList.remove('hidden');
+    $('#colorGradeUnlocked').classList.remove('hidden');
+    $('#speedUnlocked').classList.remove('hidden');
+    $('#chromaUnlocked').classList.remove('hidden');
+  }
+
+  // ---------- tools switching ----------
+  $$('.tool[data-tool]').forEach(btn=>{
+    btn.onclick = ()=>{
+      const tool = btn.dataset.tool;
+      const needsPro = btn.dataset.pro==='true';
+      const openThisTool = ()=>{
+        $$('.tool[data-tool]').forEach(b=>b.classList.remove('active'));
+        btn.classList.add('active');
+        $$('.panelSection').forEach(p=>p.classList.add('hidden'));
+        $('#panel-'+tool).classList.remove('hidden');
+        drawMode = (tool==='draw') ? drawMode : false;
+        updateDrawBtn();
+      };
+      if(needsPro && !isPro){ openProModal(openThisTool); return; }
+      openThisTool();
+    };
+  });
+
+  // ---------- adjust sliders ----------
+  function bindSlider(id,valId,key,suffix){
+    $(id).addEventListener('input', e=>{
+      adjust[key] = +e.target.value;
+      $(valId).textContent = e.target.value + suffix;
+      renderCurrent();
+    });
+  }
+  bindSlider('#s_bri','#v_bri','bri','%');
+  bindSlider('#s_con','#v_con','con','%');
+  bindSlider('#s_sat','#v_sat','sat','%');
+  bindSlider('#s_hue','#v_hue','hue','°');
+  bindSlider('#s_blur','#v_blur','blur','px');
+  bindSlider('#s_vig','#v_vig','vig','%');
+  function updateAdjustUI(){
+    $('#s_bri').value=adjust.bri; $('#v_bri').textContent=adjust.bri+'%';
+    $('#s_con').value=adjust.con; $('#v_con').textContent=adjust.con+'%';
+    $('#s_sat').value=adjust.sat; $('#v_sat').textContent=adjust.sat+'%';
+    $('#s_hue').value=adjust.hue; $('#v_hue').textContent=adjust.hue+'°';
+    $('#s_blur').value=adjust.blur; $('#v_blur').textContent=adjust.blur+'px';
+    $('#s_vig').value=adjust.vig; $('#v_vig').textContent=adjust.vig+'%';
+  }
+
+  // ---------- PRO: color grade ----------
+  $('#shadowTint').addEventListener('input', e=>{ colorGrade.shadowTint=e.target.value; renderCurrent(); });
+  $('#shadowInt').addEventListener('input', e=>{ colorGrade.shadowInt=+e.target.value; $('#v_shadowInt').textContent=e.target.value+'%'; renderCurrent(); });
+  $('#highlightTint').addEventListener('input', e=>{ colorGrade.highlightTint=e.target.value; renderCurrent(); });
+  $('#highInt').addEventListener('input', e=>{ colorGrade.highInt=+e.target.value; $('#v_highInt').textContent=e.target.value+'%'; renderCurrent(); });
+
+  // ---------- PRO: text effects ----------
+  $('#textOutlineColor').addEventListener('input', e=>{ textFx.outline=e.target.value; });
+  $('#textOutlineWidth').addEventListener('input', e=>{ textFx.outlineW=+e.target.value; });
+  $('#textShadowToggle').addEventListener('change', e=>{ textFx.shadow=e.target.checked; });
+  $('#textBlend').addEventListener('change', e=>{ textFx.blend=e.target.value; });
+
+  // ---------- PRO: speed control ----------
+  $('#speedSlider').addEventListener('input', e=>{
+    videoSpeed = (+e.target.value)/100;
+    $('#v_speed').textContent = videoSpeed.toFixed(2)+'x';
+    srcVideo.playbackRate = videoSpeed;
+  });
+  $$('#panel-speed .presetGrid button[data-speed]').forEach(b=>{
+    b.onclick = ()=>{
+      $('#speedSlider').value = b.dataset.speed;
+      videoSpeed = (+b.dataset.speed)/100;
+      $('#v_speed').textContent = videoSpeed.toFixed(2)+'x';
+      srcVideo.playbackRate = videoSpeed;
+    };
+  });
+
+  // ---------- PRO: green screen ----------
+  $('#chromaEnable').addEventListener('change', e=>{ chroma.enabled=e.target.checked; });
+  $('#chromaSens').addEventListener('input', e=>{ chroma.sens=+e.target.value; $('#v_chromaSens').textContent=e.target.value+'%'; });
+  $('#chromaBg').addEventListener('input', e=>{ chroma.bg=e.target.value; });
+
+  function hexToRgb(hex){
+    const v = parseInt(hex.slice(1),16);
+    return [(v>>16)&255,(v>>8)&255,v&255];
+  }
+  function applyColorGrade(w,h){
+    if(colorGrade.shadowInt>0){
+      const [r,g,b] = hexToRgb(colorGrade.shadowTint);
+      ctx.save(); ctx.globalCompositeOperation='multiply'; ctx.globalAlpha = colorGrade.shadowInt/200;
+      ctx.fillStyle = `rgb(${r},${g},${b})`; ctx.fillRect(0,0,w,h); ctx.restore();
+    }
+    if(colorGrade.highInt>0){
+      const [r,g,b] = hexToRgb(colorGrade.highlightTint);
+      ctx.save(); ctx.globalCompositeOperation='screen'; ctx.globalAlpha = colorGrade.highInt/200;
+      ctx.fillStyle = `rgb(${r},${g},${b})`; ctx.fillRect(0,0,w,h); ctx.restore();
+    }
+  }
+  function applyChroma(w,h){
+    if(!chroma.enabled) return;
+    const imgData = ctx.getImageData(0,0,w,h);
+    const d = imgData.data;
+    const thresh = chroma.sens;
+    const [bgR,bgG,bgB] = hexToRgb(chroma.bg);
+    for(let i=0;i<d.length;i+=4){
+      const r=d[i],g=d[i+1],b=d[i+2];
+      if(g>60 && g > r*(1+thresh/150) && g > b*(1+thresh/150)){
+        d[i]=bgR; d[i+1]=bgG; d[i+2]=bgB;
+      }
+    }
+    ctx.putImageData(imgData,0,0);
+  }
+
+
+  // ---------- presets ----------
+  const PRESETS = {
+    none:{bri:100,con:100,sat:100,hue:0},
+    mono:{bri:105,con:110,sat:0,hue:0},
+    sepia:{bri:105,con:105,sat:70,hue:20},
+    vivid:{bri:108,con:120,sat:160,hue:0},
+    cold:{bri:100,con:105,sat:110,hue:190},
+    warm:{bri:105,con:100,sat:120,hue:15},
+    fade:{bri:112,con:85,sat:70,hue:0},
+    noir:{bri:95,con:130,sat:0,hue:0}
+  };
+  $$('#panel-filters button[data-preset]').forEach(b=>{
+    b.onclick = ()=>{
+      activePreset=b.dataset.preset;
+      Object.assign(adjust, PRESETS[activePreset]);
+      updateAdjustUI(); renderCurrent();
+    };
+  });
+
+  function filterString(){
+    return `brightness(${adjust.bri}%) contrast(${adjust.con}%) saturate(${adjust.sat}%) hue-rotate(${adjust.hue}deg) blur(${adjust.blur}px)`;
+  }
+
+  // ---------- rotate/flip ----------
+  $('#rotL').onclick = ()=>{ rotation=(rotation+270)%360; renderPhoto(); };
+  $('#rotR').onclick = ()=>{ rotation=(rotation+90)%360; renderPhoto(); };
+  $('#flipH').onclick = ()=>{ flipH_=!flipH_; renderPhoto(); };
+  $('#flipV').onclick = ()=>{ flipV_=!flipV_; renderPhoto(); };
+
+  // ---------- crop ----------
+  let ratioMode='free';
+  $$('#panel-crop button[data-ratio]').forEach(b=>{
+    b.onclick=()=>{ ratioMode=b.dataset.ratio; };
+  });
+  $('#applyCrop').onclick = ()=>{
+    if(!cropRect || !baseImage) { toast('Pehle canvas par crop area drag karein'); return; }
+    pushHistory();
+    const {x,y,w,h} = cropRect;
+    const imgData = ctx.getImageData(x,y,w,h);
+    canvas.width=w; canvas.height=h;
+    ctx.putImageData(imgData,0,0);
+    // bake into a new base image
+    const dataUrl = canvas.toDataURL();
+    const img = new Image();
+    img.onload=()=>{ baseImage=img; rotation=0; flipH_=false; flipV_=false;
+      drawLayer.width=w; drawLayer.height=h; drawCtx.clearRect(0,0,w,h);
+      objects=[]; renderLayerList(); renderPhoto(); };
+    img.src=dataUrl;
+    cropRect=null;
+    toast('Crop apply ho gaya ✔');
+  };
+
+  canvas.addEventListener('mousedown', e=>{
+    const rect = canvas.getBoundingClientRect();
+    const scaleX = canvas.width/rect.width, scaleY = canvas.height/rect.height;
+    const x = (e.clientX-rect.left)*scaleX, y=(e.clientY-rect.top)*scaleY;
+
+    const cropToolActive = !$('#panel-crop').classList.contains('hidden');
+    if(mode==='photo' && cropToolActive){
+      cropping=true; cropStart={x,y}; cropRect={x,y,w:0,h:0}; return;
+    }
+    if(mode==='photo' && drawMode){
+      drawing=true; lastX=x; lastY=y; return;
+    }
+    // object drag works in both photo and video mode
+    for(let i=objects.length-1;i>=0;i--){
+      const o=objects[i];
+      const approxW = (o.text.length*o.size*0.55), approxH=o.size;
+      if(x>=o.x-10 && x<=o.x+approxW && y>=o.y-approxH && y<=o.y+10){
+        dragObj=o; dragOffX=x-o.x; dragOffY=y-o.y; break;
+      }
+    }
+  });
+  canvas.addEventListener('mousemove', e=>{
+    const rect = canvas.getBoundingClientRect();
+    const scaleX = canvas.width/rect.width, scaleY = canvas.height/rect.height;
+    const x=(e.clientX-rect.left)*scaleX, y=(e.clientY-rect.top)*scaleY;
+
+    if(cropping && cropStart){
+      let w = x-cropStart.x, h = y-cropStart.y;
+      if(ratioMode!=='free'){
+        const [rw,rh] = ratioMode.split(':').map(Number);
+        h = Math.sign(h||1)*Math.abs(w)*(rh/rw);
+      }
+      cropRect = {x:Math.min(cropStart.x,cropStart.x+w), y:Math.min(cropStart.y,cropStart.y+h), w:Math.abs(w), h:Math.abs(h)};
+      renderPhoto();
+      return;
+    }
+    if(drawing){
+      drawCtx.strokeStyle = $('#drawColor').value;
+      drawCtx.lineWidth = +$('#drawSize').value;
+      drawCtx.lineCap='round';
+      drawCtx.beginPath(); drawCtx.moveTo(lastX,lastY); drawCtx.lineTo(x,y); drawCtx.stroke();
+      lastX=x; lastY=y; renderPhoto();
+      return;
+    }
+    if(dragObj){
+      dragObj.x = x-dragOffX; dragObj.y=y-dragOffY;
+      if(mode==='photo') renderPhoto(); else drawVideoFrame();
+    }
+  });
+  window.addEventListener('mouseup', ()=>{ cropping=false; drawing=false; dragObj=null; });
+
+  // ---------- text ----------
+  $('#textSize').addEventListener('input', e=>{ $('#v_tsize').textContent=e.target.value+'px'; });
+  $('#addTextBtn').onclick = ()=>{
+    const val = $('#textInput').value.trim();
+    if(!val){ toast('Pehle text likhein'); return; }
+    const obj = {type:'text', text:val, x:canvas.width/2-60, y:canvas.height/2, color:$('#textColor').value, font:$('#textFont').value, size:+$('#textSize').value,
+      anim: mode==='video' ? $('#textAnim').value : 'none',
+      animStart: mode==='video' ? Math.max(0,(srcVideo.currentTime||0)-trimStartT) : 0,
+      animDur: mode==='video' ? Math.max(0.1,+$('#animDur').value) : 0
+    };
+    if(mode==='video') $('#animStart').value = obj.animStart.toFixed(1);
+    objects.push(obj);
+    if(mode==='photo') renderPhoto(); else drawVideoFrame();
+    renderLayerList();
+  };
+  // keep animStart field in sync with a sensible default when user edits it manually
+  $('#animStart').addEventListener('change', e=>{ /* used only as default for next added text */ });
+
+  // ---------- stickers ----------
+  $$('#panel-stickers .stickerGrid button').forEach(b=>{
+    b.onclick=()=>{
+      objects.push({type:'text', text:b.textContent, x:canvas.width/2-20, y:canvas.height/2, color:'#fff', font:'Inter', size:48, isSticker:true,
+        anim: mode==='video' ? 'pop' : 'none',
+        animStart: mode==='video' ? Math.max(0,(srcVideo.currentTime||0)-trimStartT) : 0,
+        animDur: 0.6
+      });
+      if(mode==='photo') renderPhoto(); else drawVideoFrame();
+      renderLayerList();
+    };
+  });
+
+  // ---------- draw mode ----------
+  function updateDrawBtn(){ $('#toggleDraw').textContent = '🖌️ Drawing Mode: '+(drawMode?'ON':'OFF'); }
+  $('#toggleDraw').onclick = ()=>{ drawMode=!drawMode; updateDrawBtn(); };
+  $('#drawSize').addEventListener('input', e=> $('#v_bsize').textContent = e.target.value+'px');
+  $('#clearDraw').onclick = ()=>{ drawCtx.clearRect(0,0,drawLayer.width,drawLayer.height); renderPhoto(); toast('Drawing clear ho gayi'); };
+
+  // ---------- layers list ----------
+  function renderLayerList(){
+    const list = $('#layerList');
+    if(objects.length===0){ list.innerHTML = '<small style="color:var(--muted);margin:0 8px;display:block;">Koi layer nahi hai abhi.</small>'; return; }
+    list.innerHTML='';
+    objects.forEach((o,i)=>{
+      const div=document.createElement('div');
+      div.className='layerItem';
+      div.innerHTML = `<span>${o.isSticker?'😀 Sticker':'🔤 '+o.text.slice(0,14)}</span><span class="rm">✕</span>`;
+      div.querySelector('.rm').onclick=()=>{ objects.splice(i,1); renderPhoto(); renderLayerList(); };
+      list.appendChild(div);
+    });
+  }
+
+  // ---------- history ----------
+  function pushHistory(){
+    history.push({rotation,flipH_,flipV_,adjust:{...adjust},objects:JSON.parse(JSON.stringify(objects))});
+    if(history.length>15) history.shift();
+  }
+  $('#btnUndo').onclick = ()=>{
+    const h = history.pop();
+    if(!h){ toast('Undo ke liye kuch nahi bacha'); return; }
+    rotation=h.rotation; flipH_=h.flipH_; flipV_=h.flipV_; adjust=h.adjust; objects=h.objects;
+    updateAdjustUI(); renderPhoto(); renderLayerList();
+  };
+  $('#btnReset').onclick = ()=>{
+    if(!baseImage) return;
+    pushHistory();
+    rotation=0; flipH_=false; flipV_=false;
+    adjust={bri:100,con:100,sat:100,hue:0,blur:0,vig:0};
+    objects=[]; drawCtx.clearRect(0,0,drawLayer.width,drawLayer.height);
+    updateAdjustUI(); renderPhoto(); renderLayerList();
+    toast('Reset ho gaya');
+  };
+
+  // track adjust changes for undo occasionally
+  ['#s_bri','#s_con','#s_sat','#s_hue','#s_blur','#s_vig'].forEach(id=>{
+    $(id).addEventListener('mousedown', pushHistory);
+  });
+
+  // ---------- render photo ----------
+  function renderPhoto(){
+    if(!baseImage) return;
+    const w=canvas.width, h=canvas.height;
+    ctx.save();
+    ctx.clearRect(0,0,w,h);
+    ctx.filter = filterString();
+
+    ctx.save();
+    ctx.translate(w/2,h/2);
+    ctx.rotate(rotation*Math.PI/180);
+    ctx.scale(flipH_?-1:1, flipV_?-1:1);
+    const drawW = (rotation===90||rotation===270) ? h : w;
+    const drawH = (rotation===90||rotation===270) ? w : h;
+    ctx.drawImage(baseImage, -drawW/2, -drawH/2, drawW, drawH);
+    ctx.restore();
+
+    ctx.filter='none';
+    // drawing layer
+    ctx.drawImage(drawLayer,0,0,w,h);
+
+    // vignette
+    if(adjust.vig>0){
+      const grad = ctx.createRadialGradient(w/2,h/2,h*0.3,w/2,h/2,h*0.75);
+      grad.addColorStop(0,'rgba(0,0,0,0)');
+      grad.addColorStop(1,`rgba(0,0,0,${adjust.vig/100})`);
+      ctx.fillStyle=grad; ctx.fillRect(0,0,w,h);
+    }
+
+    // PRO: color grade
+    if(isPro) applyColorGrade(w,h);
+
+    // objects (text/stickers)
+    objects.forEach(o=>{
+      ctx.save();
+      ctx.font = `${o.size}px "${o.font}"`;
+      ctx.textBaseline='alphabetic';
+      if(isPro){
+        ctx.globalCompositeOperation = textFx.blend;
+        if(textFx.shadow){ ctx.shadowColor='rgba(0,0,0,.6)'; ctx.shadowBlur=8; ctx.shadowOffsetX=3; ctx.shadowOffsetY=3; }
+        if(textFx.outlineW>0){ ctx.lineWidth=textFx.outlineW; ctx.strokeStyle=textFx.outline; ctx.strokeText(o.text,o.x,o.y); }
+      }
+      ctx.fillStyle=o.color;
+      ctx.fillText(o.text, o.x, o.y);
+      ctx.restore();
+    });
+
+    // crop overlay
+    if(cropRect){
+      ctx.save();
+      ctx.fillStyle='rgba(0,0,0,0.5)';
+      ctx.fillRect(0,0,w,h);
+      ctx.clearRect(cropRect.x,cropRect.y,cropRect.w,cropRect.h);
+      ctx.strokeStyle='#22e5ff'; ctx.lineWidth=2;
+      ctx.strokeRect(cropRect.x,cropRect.y,cropRect.w,cropRect.h);
+      ctx.restore();
+    }
+    ctx.restore();
+  }
+  function renderCurrent(){ if(mode==='photo') renderPhoto(); }
+
+  // ---------- export photo ----------
+  $('#btnExport').onclick = ()=>{
+    if(!baseImage) return;
+    const link=document.createElement('a');
+    link.download='frame-edit.png';
+    link.href=canvas.toDataURL('image/png');
+    link.click();
+    toast('Photo download ho rahi hai ✔');
+  };
+
+  // =========================================================
+  // VIDEO MODE
+  // =========================================================
+  let trimStartT=0, trimEndT=0;
+
+  // ---------- audio graph ----------
+  let audioCtx=null, videoAudioSrc=null, videoGain=null, musicEl=null, musicSrc=null, musicGain=null, audioDest=null;
+  let musicVolume=0.8, videoVolume=1.0;
+
+  function ensureAudioGraph(){
+    if(audioCtx) return;
+    audioCtx = new (window.AudioContext||window.webkitAudioContext)();
+    videoAudioSrc = audioCtx.createMediaElementSource(srcVideo);
+    videoGain = audioCtx.createGain(); videoGain.gain.value = videoVolume;
+    audioDest = audioCtx.createMediaStreamDestination();
+    videoAudioSrc.connect(videoGain).connect(audioDest);
+    videoGain.connect(audioCtx.destination); // also hear it while previewing
+  }
+
+  $('#btnUploadAudio').onclick = ()=> $('#fileInputAudio').click();
+  $('#fileInputAudio').addEventListener('change', e=>{
+    const f = e.target.files[0]; if(!f) return;
+    ensureAudioGraph();
+    if(musicSrc){ try{musicSrc.disconnect();}catch(err){} }
+    if(musicEl){ musicEl.pause(); }
+    musicEl = new Audio(URL.createObjectURL(f));
+    musicEl.loop = true; musicEl.crossOrigin='anonymous';
+    musicSrc = audioCtx.createMediaElementSource(musicEl);
+    musicGain = audioCtx.createGain(); musicGain.gain.value = musicVolume;
+    musicSrc.connect(musicGain).connect(audioDest);
+    musicGain.connect(audioCtx.destination);
+    $('#audioFileName').textContent = '🎵 ' + f.name;
+    $('#audioNameField').style.display='block';
+    toast('Music add ho gaya ✔');
+  });
+  $('#musicVol').addEventListener('input', e=>{
+    musicVolume = (+e.target.value)/100;
+    $('#v_musicVol').textContent = e.target.value+'%';
+    if(musicGain) musicGain.gain.value = musicVolume;
+  });
+  $('#videoVol').addEventListener('input', e=>{
+    videoVolume = (+e.target.value)/100;
+    $('#v_videoVol').textContent = e.target.value+'%';
+    if(videoGain) videoGain.gain.value = videoVolume;
+  });
+  $('#removeAudio').onclick = ()=>{
+    if(musicSrc){ try{musicSrc.disconnect();}catch(err){} musicSrc=null; }
+    if(musicEl){ musicEl.pause(); musicEl=null; }
+    $('#audioNameField').style.display='none';
+    toast('Music hata diya gaya');
+  };
+
+  $('#trimStart').addEventListener('input', updateTrim);
+  $('#trimEnd').addEventListener('input', updateTrim);
+  function updateTrim(){
+    const dur = srcVideo.duration || 0;
+    trimStartT = (+$('#trimStart').value/1000)*dur;
+    trimEndT = (+$('#trimEnd').value/1000)*dur;
+    if(trimEndT<=trimStartT) trimEndT = trimStartT+0.1;
+    $('#tStart').textContent = fmtTime(trimStartT);
+    $('#tEnd').textContent = fmtTime(trimEndT);
+    srcVideo.currentTime = trimStartT;
+    updateRangeTrack();
+  }
+  function updateRangeTrack(){
+    const dur = srcVideo.duration||1;
+    const track = $('#trackRow'); const tw = track.clientWidth;
+    const rt = $('#rangeTrack');
+    rt.style.left = (trimStartT/dur*tw)+'px';
+    rt.style.width = Math.max(2,((trimEndT-trimStartT)/dur*tw))+'px';
+  }
+
+  $('#btnPlay').onclick = ()=>{
+    if(!srcVideo.src) return;
+    ensureAudioGraph();
+    if(audioCtx.state==='suspended') audioCtx.resume();
+    if(srcVideo.currentTime < trimStartT || srcVideo.currentTime>=trimEndT) srcVideo.currentTime = trimStartT;
+    srcVideo.play();
+    if(musicEl){ musicEl.currentTime = 0; musicEl.play(); }
+    loopDraw();
+  };
+  $('#btnPause').onclick = ()=>{ srcVideo.pause(); if(musicEl) musicEl.pause(); };
+  srcVideo.addEventListener('timeupdate', ()=>{
+    $('#tCur').textContent = fmtTime(srcVideo.currentTime);
+    const dur=srcVideo.duration||1;
+    $('#playhead').style.left = (srcVideo.currentTime/dur*$('#trackRow').clientWidth)+'px';
+    if(srcVideo.currentTime>=trimEndT){ srcVideo.pause(); srcVideo.currentTime=trimStartT; }
+  });
+
+  function easeOutCubic(t){ return 1-Math.pow(1-t,3); }
+
+  function drawVideoFrame(){
+    const w=canvas.width,h=canvas.height;
+    ctx.save();
+    ctx.filter = filterString();
+    ctx.drawImage(srcVideo,0,0,w,h);
+    ctx.filter='none';
+
+    // PRO: green screen (pixel-level, before overlays)
+    if(isPro) applyChroma(w,h);
+
+    if(adjust.vig>0){
+      const grad = ctx.createRadialGradient(w/2,h/2,h*0.3,w/2,h/2,h*0.75);
+      grad.addColorStop(0,'rgba(0,0,0,0)');
+      grad.addColorStop(1,`rgba(0,0,0,${adjust.vig/100})`);
+      ctx.fillStyle=grad; ctx.fillRect(0,0,w,h);
+    }
+
+    // PRO: color grade
+    if(isPro) applyColorGrade(w,h);
+
+    const tNow = (srcVideo.currentTime||0) - trimStartT;
+    objects.forEach(o=>{
+      const anim = o.anim||'none';
+      const start = o.animStart||0, dur = Math.max(0.05,o.animDur||1);
+      const p = anim==='none' ? 1 : Math.min(1,Math.max(0,(tNow-start)/dur));
+      if(anim!=='none' && tNow < start) return; // not appeared yet
+      const eased = easeOutCubic(p);
+
+      ctx.save();
+      let alpha=1, offX=0, offY=0, scale=1, textToShow=o.text;
+      if(anim==='fade'){ alpha=eased; }
+      else if(anim==='slideL'){ alpha=eased; offX=(1-eased)*-120; }
+      else if(anim==='slideT'){ alpha=eased; offY=(1-eased)*-80; }
+      else if(anim==='pop'){
+        alpha=Math.min(1,p*2);
+        scale = p<1 ? (0.4+0.6*eased) + (p>0.7 ? Math.sin(p*Math.PI*3)*0.04*(1-p) : 0) : 1;
+      }
+      else if(anim==='typewriter'){
+        alpha=1;
+        const chars = Math.floor(o.text.length*eased);
+        textToShow = o.text.slice(0,chars);
+      }
+      ctx.globalAlpha = alpha;
+      if(isPro){
+        ctx.globalCompositeOperation = textFx.blend;
+        if(textFx.shadow){ ctx.shadowColor='rgba(0,0,0,.6)'; ctx.shadowBlur=8; ctx.shadowOffsetX=3; ctx.shadowOffsetY=3; }
+      }
+      ctx.font = `${o.size}px "${o.font}"`;
+      ctx.translate(o.x+offX, o.y+offY);
+      if(scale!==1){ ctx.translate((o.text.length*o.size*0.28), 0); ctx.scale(scale,scale); ctx.translate(-(o.text.length*o.size*0.28),0); }
+      if(isPro && textFx.outlineW>0){ ctx.lineWidth=textFx.outlineW; ctx.strokeStyle=textFx.outline; ctx.strokeText(textToShow,0,0); }
+      ctx.fillStyle=o.color;
+      ctx.fillText(textToShow, 0, 0);
+      ctx.restore();
+    });
+    ctx.restore();
+  }
+  function loopDraw(){
+    if(mode!=='video') return;
+    drawVideoFrame();
+    if(!srcVideo.paused && !srcVideo.ended) animReq = requestAnimationFrame(loopDraw);
+  }
+  srcVideo.addEventListener('seeked', drawVideoFrame);
+  srcVideo.addEventListener('play', loopDraw);
+
+  // dragging text objects on video canvas too — reuse same mousedown handlers (objects array shared)
+
+  // ---------- export video (record canvas) ----------
+  $('#btnExportVideo').addEventListener('click', async ()=>{
+    if(!srcVideo.src){ toast('Pehle video upload karein'); return; }
+    ensureAudioGraph();
+    if(audioCtx.state==='suspended') await audioCtx.resume();
+    toast('Recording shuru... thoda wait karein');
+
+    const canvasStream = canvas.captureStream(30);
+    const combined = new MediaStream([
+      ...canvasStream.getVideoTracks(),
+      ...audioDest.stream.getAudioTracks()
+    ]);
+
+    let chunks=[];
+    let mime = 'video/webm;codecs=vp9,opus';
+    if(!MediaRecorder.isTypeSupported(mime)) mime='video/webm';
+    const rec = new MediaRecorder(combined, {mimeType:mime});
+    rec.ondataavailable = e=>{ if(e.data.size>0) chunks.push(e.data); };
+    rec.onstop = ()=>{
+      const blob = new Blob(chunks,{type:'video/webm'});
+      const link=document.createElement('a');
+      link.href = URL.createObjectURL(blob);
+      link.download='frame-edit.webm';
+      link.click();
+      toast('Video export ho gayi ✔ (audio ke saath, .webm)');
+    };
+    srcVideo.currentTime = trimStartT;
+    if(musicEl) musicEl.currentTime = 0;
+    await new Promise(r=>setTimeout(r,150));
+    rec.start();
+    srcVideo.play();
+    if(musicEl) musicEl.play();
+    loopDraw();
+    const checkEnd = setInterval(()=>{
+      if(srcVideo.currentTime>=trimEndT || (srcVideo.paused && srcVideo.currentTime>=trimEndT-0.05)){
+        clearInterval(checkEnd);
+        rec.stop();
+        srcVideo.pause();
+        if(musicEl) musicEl.pause();
+      }
+    },100);
+  });
+
+  window.addEventListener('resize', updateRangeTrack);
+})();
+</script>
+</body>
+</html>
