@@ -1,5 +1,7 @@
-// Basic service worker — caches the app shell so PWABuilder / Chrome recognize this as an installable PWA.
-const CACHE_NAME = 'hbm-frame-editor-v1';
+// Service worker — makes the core editor (photos/videos/filters/etc.) work fully offline.
+// Pro/payment features (Firebase, JazzCash flow, EmailJS) still need internet — this
+// worker deliberately leaves those cross-origin requests untouched.
+const CACHE_NAME = 'hbm-frame-editor-v2';
 const APP_SHELL = ['./', './index.html', './manifest.json', './icon-192.png', './icon-512.png'];
 
 self.addEventListener('install', (event) => {
@@ -19,9 +21,25 @@ self.addEventListener('activate', (event) => {
 });
 
 self.addEventListener('fetch', (event) => {
-  // Network-first for everything (this app relies on live Firebase/EmailJS calls),
-  // falling back to cache only if the network request fails (e.g. offline).
+  const req = event.request;
+  const url = new URL(req.url);
+
+  // Only handle our own GET requests — never intercept Firebase/EmailJS/etc. calls,
+  // and never touch non-GET requests (payment submissions, Firestore writes).
+  if (req.method !== 'GET' || url.origin !== self.location.origin) return;
+
+  // Cache-first: the editor loads instantly and works offline; we refresh the
+  // cache in the background whenever a newer version is reachable online.
   event.respondWith(
-    fetch(event.request).catch(() => caches.match(event.request))
+    caches.match(req).then((cached) => {
+      const networkFetch = fetch(req).then((res) => {
+        if (res && res.status === 200) {
+          const copy = res.clone();
+          caches.open(CACHE_NAME).then((cache) => cache.put(req, copy));
+        }
+        return res;
+      }).catch(() => cached);
+      return cached || networkFetch;
+    })
   );
 });

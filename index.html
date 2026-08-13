@@ -13,8 +13,6 @@
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-title" content="HBM Frame">
 <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Inter:wght@400;500;600;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
 <style>
   :root{
     --bg:#0b0b0f;
@@ -29,7 +27,7 @@
     --danger:#ff5c5c;
   }
   *{box-sizing:border-box;}
-  html,body{margin:0;padding:0;background:var(--bg);color:var(--text);font-family:'Inter',sans-serif;height:100%;overflow-x:hidden;}
+  html,body{margin:0;padding:0;background:var(--bg);color:var(--text);font-family:-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;height:100%;overflow-x:hidden;}
   ::selection{background:var(--accent1);color:#000;}
   ::-webkit-scrollbar{width:8px;height:8px;}
   ::-webkit-scrollbar-thumb{background:#333340;border-radius:4px;}
@@ -45,23 +43,23 @@
   .brand .mark{
     width:30px;height:30px;border-radius:8px;background:var(--grad);
     display:flex;align-items:center;justify-content:center;
-    font-family:'Archivo Black';font-size:15px;color:#0b0b0f;
+    font-family:ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif; font-weight:900;font-size:15px;color:#0b0b0f;
     transform:rotate(-6deg);
   }
-  .brand h1{font-family:'Archivo Black';font-size:16px;letter-spacing:0.3px;margin:0;white-space:nowrap;}
+  .brand h1{font-family:ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif; font-weight:900;font-size:16px;letter-spacing:0.3px;margin:0;white-space:nowrap;}
   @media (max-width:480px){ .brand h1{font-size:13px;} .brand span{font-size:9px;} }
-  .brand span{color:var(--muted);font-size:11px;font-family:'Space Mono',monospace;display:block;margin-top:-2px;letter-spacing:1px;}
+  .brand span{color:var(--muted);font-size:11px;font-family:'SF Mono', 'Roboto Mono', Consolas, monospace;display:block;margin-top:-2px;letter-spacing:1px;}
 
   .modeSwitch{display:flex;background:var(--panel2);border-radius:999px;padding:4px;border:1px solid var(--line);}
   .modeSwitch button{
     border:none;background:transparent;color:var(--muted);padding:8px 18px;border-radius:999px;
-    font-family:'Inter';font-weight:600;font-size:13px;cursor:pointer;transition:.2s;
+    font-family:-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;font-weight:600;font-size:13px;cursor:pointer;transition:.2s;
   }
   .modeSwitch button.active{background:var(--grad);color:#0b0b0f;}
 
   .proBtn{
     background:linear-gradient(90deg,#f9c74f,#f9844a);border:none;color:#1a1206;padding:8px 14px;border-radius:999px;
-    font-family:'Inter';font-weight:700;font-size:12.5px;cursor:pointer;display:flex;align-items:center;gap:6px;
+    font-family:-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;font-weight:700;font-size:12.5px;cursor:pointer;display:flex;align-items:center;gap:6px;
     box-shadow:0 0 0 1px rgba(255,255,255,.15) inset;transition:.2s;
   }
   .proBtn:hover{filter:brightness(1.08);}
@@ -80,7 +78,7 @@
     width:28px;height:28px;border-radius:50%;cursor:pointer;font-size:14px;
   }
   .proCrown{font-size:34px;text-align:center;margin-bottom:6px;}
-  .proModal h2{font-family:'Archivo Black';font-size:19px;text-align:center;margin:0 0 6px;}
+  .proModal h2{font-family:ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif; font-weight:900;font-size:19px;text-align:center;margin:0 0 6px;}
   .proSub{color:var(--muted);text-align:center;font-size:13px;margin:0 0 18px;}
   .proFeatureList{list-style:none;padding:0;margin:0 0 20px;display:flex;flex-direction:column;gap:9px;}
   .proFeatureList li{font-size:13px;background:var(--panel2);border:1px solid var(--line);padding:9px 12px;border-radius:9px;}
@@ -88,7 +86,7 @@
 
   .priceCard{background:var(--panel2);border:1px solid var(--line);border-radius:10px;padding:12px 14px;margin:0 0 16px;}
   .priceRow{display:flex;justify-content:space-between;align-items:center;font-size:13px;font-weight:600;}
-  .priceTag{font-family:'Archivo Black';font-size:18px;background:linear-gradient(90deg,#f9c74f,#f9844a);-webkit-background-clip:text;background-clip:text;color:transparent;}
+  .priceTag{font-family:ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif; font-weight:900;font-size:18px;background:linear-gradient(90deg,#f9c74f,#f9844a);-webkit-background-clip:text;background-clip:text;color:transparent;}
 
   .payTabs{display:flex;gap:8px;margin-bottom:16px;}
   .payTab{flex:1;background:var(--panel2);border:1px solid var(--line);color:var(--muted);padding:9px;border-radius:8px;font-weight:700;font-size:13px;cursor:pointer;}
@@ -100,11 +98,11 @@
 
   .rzpBox{background:var(--panel2);border:1px solid var(--line);border-radius:10px;padding:16px;text-align:center;margin-bottom:8px;}
   .rzpLogo{font-size:13px;font-weight:700;color:var(--text);}
-  .jcNumber{font-family:'Space Mono',monospace;font-size:22px;font-weight:700;color:var(--accent2);letter-spacing:1px;margin-top:8px;}
+  .jcNumber{font-family:'SF Mono', 'Roboto Mono', Consolas, monospace;font-size:22px;font-weight:700;color:var(--accent2);letter-spacing:1px;margin-top:8px;}
   #jcScreenshotPreview{margin-top:8px;text-align:center;}
   #jcScreenshotPreview img{max-width:100%;max-height:160px;border-radius:8px;border:1px solid var(--line);}
   .setupList{padding-left:20px;margin:0;display:flex;flex-direction:column;gap:10px;font-size:13px;}
-  .setupList code{background:var(--panel2);border:1px solid var(--line);padding:1px 5px;border-radius:4px;font-family:'Space Mono',monospace;font-size:11.5px;}
+  .setupList code{background:var(--panel2);border:1px solid var(--line);padding:1px 5px;border-radius:4px;font-family:'SF Mono', 'Roboto Mono', Consolas, monospace;font-size:11.5px;}
   .setupList a{color:var(--accent2);}
 
   .proCenterStep{display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:14px 0;}
@@ -141,14 +139,14 @@
 
   .toolrail{border-right:1px solid var(--line);padding:16px 10px;background:var(--panel);}
   .toolrail h3, .propsPanel h3{
-    font-family:'Space Mono',monospace;font-size:10px;color:var(--muted);text-transform:uppercase;
+    font-family:'SF Mono', 'Roboto Mono', Consolas, monospace;font-size:10px;color:var(--muted);text-transform:uppercase;
     letter-spacing:1.5px;margin:18px 8px 8px;
   }
   .toolrail h3:first-child{margin-top:4px;}
   .tool{
     display:flex;align-items:center;gap:10px;width:100%;padding:10px 10px;border-radius:10px;
     border:1px solid transparent;background:transparent;color:var(--text);cursor:pointer;
-    font-size:13.5px;font-family:'Inter';font-weight:500;margin-bottom:3px;transition:.15s;text-align:left;
+    font-size:13.5px;font-family:-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;font-weight:500;margin-bottom:3px;transition:.15s;text-align:left;
   }
   .tool:hover{background:var(--panel2);}
   .tool.active{background:var(--panel2);border-color:var(--accent1);color:#fff;}
@@ -183,14 +181,14 @@
     background:var(--panel);cursor:pointer;transition:.2s;text-align:center;padding:20px;
   }
   .emptyState:hover{border-color:var(--accent1);}
-  .emptyState .big{font-family:'Archivo Black';font-size:22px;background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent;}
+  .emptyState .big{font-family:ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif; font-weight:900;font-size:22px;background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent;}
   .emptyState p{color:var(--muted);font-size:13px;max-width:380px;margin:0;}
-  .emptyState .hint{font-family:'Space Mono',monospace;font-size:11px;color:#5a5a68;}
+  .emptyState .hint{font-family:'SF Mono', 'Roboto Mono', Consolas, monospace;font-size:11px;color:#5a5a68;}
 
   .stageBar{display:flex;gap:10px;flex-wrap:wrap;justify-content:center;}
   .btn{
     background:var(--panel2);border:1px solid var(--line);color:var(--text);padding:9px 16px;border-radius:9px;
-    font-family:'Inter';font-weight:600;font-size:13px;cursor:pointer;display:flex;align-items:center;gap:7px;transition:.15s;
+    font-family:-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;font-weight:600;font-size:13px;cursor:pointer;display:flex;align-items:center;gap:7px;transition:.15s;
   }
   .btn:hover{border-color:var(--accent2);}
   .btn.primary{background:var(--grad);color:#0b0b0f;border:none;}
@@ -202,7 +200,7 @@
   .propsPanel{border-left:1px solid var(--line);background:var(--panel);padding:16px;overflow-y:auto;}
   .field{margin:0 8px 16px;}
   .field label{display:flex;justify-content:space-between;font-size:12px;color:var(--muted);margin-bottom:6px;font-weight:600;}
-  .field label .val{color:var(--accent2);font-family:'Space Mono',monospace;}
+  .field label .val{color:var(--accent2);font-family:'SF Mono', 'Roboto Mono', Consolas, monospace;}
   input[type=range]{
     -webkit-appearance:none;width:100%;height:4px;border-radius:2px;background:var(--line);outline:none;
   }
@@ -211,7 +209,7 @@
   }
   select,input[type=text],input[type=color],input[type=number]{
     width:100%;background:var(--panel2);border:1px solid var(--line);color:var(--text);padding:8px 10px;
-    border-radius:8px;font-family:'Inter';font-size:13px;
+    border-radius:8px;font-family:-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;font-size:13px;
   }
   input[type=color]{padding:3px;height:36px;cursor:pointer;}
   .row2{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin:0 8px 16px;}
@@ -220,7 +218,7 @@
   .presetGrid{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin:0 8px 16px;}
   .presetGrid button{
     background:var(--panel2);border:1px solid var(--line);color:var(--text);border-radius:8px;padding:8px 6px;
-    font-size:11.5px;cursor:pointer;font-family:'Inter';font-weight:600;
+    font-size:11.5px;cursor:pointer;font-family:-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;font-weight:600;
   }
   .presetGrid button:hover{border-color:var(--accent1);}
   .stickerGrid{display:grid;grid-template-columns:repeat(6,1fr);gap:6px;margin:0 8px 16px;}
@@ -243,7 +241,7 @@
   .trackRow{position:relative;height:34px;background:var(--panel2);border-radius:8px;margin-bottom:10px;}
   .rangeTrack{position:absolute;top:0;bottom:0;background:linear-gradient(90deg,rgba(255,61,127,.35),rgba(34,229,255,.35));border-radius:8px;border:1px solid var(--accent1);}
   .playhead{position:absolute;top:-4px;bottom:-4px;width:2px;background:#fff;box-shadow:0 0 8px var(--accent2);}
-  .timeRow{display:flex;justify-content:space-between;font-family:'Space Mono',monospace;font-size:11px;color:var(--muted);margin-bottom:6px;}
+  .timeRow{display:flex;justify-content:space-between;font-family:'SF Mono', 'Roboto Mono', Consolas, monospace;font-size:11px;color:var(--muted);margin-bottom:6px;}
   .transportRow{display:flex;align-items:center;gap:10px;justify-content:center;margin-top:6px;}
   .transportRow .btn{padding:8px 12px;}
 
@@ -251,7 +249,7 @@
   input[type=file]{display:none;}
 
   footer{
-    text-align:center;padding:16px;color:#4c4c58;font-size:11px;font-family:'Space Mono',monospace;
+    text-align:center;padding:16px;color:#4c4c58;font-size:11px;font-family:'SF Mono', 'Roboto Mono', Consolas, monospace;
     border-top:1px solid var(--line);
   }
 
@@ -500,9 +498,9 @@
       <div class="row2">
         <input type="color" id="textColor" value="#ffffff">
         <select id="textFont">
-          <option value="Archivo Black">Bold</option>
-          <option value="Inter">Clean</option>
-          <option value="Space Mono">Mono</option>
+          <option value="bold">Bold</option>
+          <option value="clean">Clean</option>
+          <option value="mono">Mono</option>
         </select>
       </div>
       <div class="field"><label>Size <span class="val" id="v_tsize">42px</span></label><input type="range" id="textSize" min="12" max="120" value="42"></div>
@@ -1198,7 +1196,7 @@
   // ---------- stickers ----------
   $$('#panel-stickers .stickerGrid button').forEach(b=>{
     b.onclick=()=>{
-      objects.push({type:'text', text:b.textContent, x:canvas.width/2-20, y:canvas.height/2, color:'#fff', font:'Inter', size:48, isSticker:true,
+      objects.push({type:'text', text:b.textContent, x:canvas.width/2-20, y:canvas.height/2, color:'#fff', font:'clean', size:48, isSticker:true,
         anim: mode==='video' ? 'pop' : 'none',
         animStart: mode==='video' ? Math.max(0,(srcVideo.currentTime||0)-trimStartT) : 0,
         animDur: 0.6
@@ -1289,7 +1287,7 @@
     // objects (text/stickers)
     objects.forEach(o=>{
       ctx.save();
-      ctx.font = `${o.size}px "${o.font}"`;
+      ctx.font = canvasFontString(o.font, o.size);
       ctx.textBaseline='alphabetic';
       if(isPro){
         ctx.globalCompositeOperation = textFx.blend;
@@ -1416,6 +1414,13 @@
 
   function easeOutCubic(t){ return 1-Math.pow(1-t,3); }
 
+  // Builds a canvas font string using only fonts already on the device (no internet/download needed).
+  function canvasFontString(styleKey, size){
+    if(styleKey==='bold') return `900 ${size}px sans-serif`;
+    if(styleKey==='mono') return `${size}px monospace`;
+    return `${size}px sans-serif`; // 'clean' and any unrecognized value
+  }
+
   function drawVideoFrame(){
     const w=canvas.width,h=canvas.height;
     ctx.save();
@@ -1463,7 +1468,7 @@
         ctx.globalCompositeOperation = textFx.blend;
         if(textFx.shadow){ ctx.shadowColor='rgba(0,0,0,.6)'; ctx.shadowBlur=8; ctx.shadowOffsetX=3; ctx.shadowOffsetY=3; }
       }
-      ctx.font = `${o.size}px "${o.font}"`;
+      ctx.font = canvasFontString(o.font, o.size);
       ctx.translate(o.x+offX, o.y+offY);
       if(scale!==1){ ctx.translate((o.text.length*o.size*0.28), 0); ctx.scale(scale,scale); ctx.translate(-(o.text.length*o.size*0.28),0); }
       if(isPro && textFx.outlineW>0){ ctx.lineWidth=textFx.outlineW; ctx.strokeStyle=textFx.outline; ctx.strokeText(textToShow,0,0); }
